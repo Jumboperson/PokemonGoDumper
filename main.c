@@ -298,7 +298,9 @@ void dump_class(Il2CppClass* type)
 		for (int z = 0; z < type->method_count; ++z)
 		{
 			if (type->methods[z])
-				__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s - %x", type->methods[z]->name, type->methods[z]->method);
+			{
+				__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s - %x", szTypeString[type->methods[z]->return_type->type], type->methods[z]->name, type->methods[z]->method);
+			}
 		}
 	}
 
@@ -307,7 +309,9 @@ void dump_class(Il2CppClass* type)
 		for (int z = 0; z < type->vtable_count; ++z)
 		{
 			if (type->vtable[z])
-				__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s - %x", z, type->vtable[z]->name, type->vtable[z]->method);
+			{
+				__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, szTypeString[type->vtable[z]->return_type->type], type->vtable[z]->name, type->vtable[z]->method);
+			}
 		}
 	}
 	AddDumped(type);

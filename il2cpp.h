@@ -93,6 +93,15 @@ typedef struct
 							  //MonoCustomMod modifiers [MONO_ZERO_LEN_ARRAY]; /* this may grow */
 } Il2CppType;
 
+typedef struct 
+{
+	const char* name;
+	int32_t position;
+	uint32_t token;
+	/*CustomAttributeIndex*/uint32_t customAttributeIndex;
+	const Il2CppType* parameter_type;
+} ParameterInfo;
+
 typedef struct
 {
 	Il2CppMethodPointer method;
@@ -100,7 +109,7 @@ typedef struct
 	const char* name;
 	/*Il2CppClass*/void *declaring_type;
 	const Il2CppType *return_type;
-	const /*ParameterInfo*/void* parameters;
+	const ParameterInfo* parameters;
 
 	union
 	{
