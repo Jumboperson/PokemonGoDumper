@@ -204,7 +204,7 @@ void dump_class(Il2CppClass* type)
 	if (CheckDumped(type))
 		return;
 	__android_log_print(ANDROID_LOG_INFO, TAG, "Class %s %s", type->namespaze, type->name);
-	Il2CppClass* arr[50];
+	Il2CppClass* arr[100];
 	memset(arr, 0, sizeof(arr));
 	uint32_t uiIndex = 0;
 	g_SetupClass(type);
@@ -299,7 +299,18 @@ void dump_class(Il2CppClass* type)
 		{
 			if (type->methods[z])
 			{
-				__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s - %x", szTypeString[type->methods[z]->return_type->type], type->methods[z]->name, type->methods[z]->method);
+				if (type->methods[z]->return_type->type == IL2CPP_TYPE_CLASS || type->methods[z]->return_type->type == IL2CPP_TYPE_VALUETYPE)
+				{
+					Il2CppClass* klass = g_GetClassFromIndex(type->methods[z]->return_type->data.klassIndex);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s - %x", klass->name, type->methods[z]->name, type->methods[z]->method);
+
+					if (!CheckArr(arr, uiIndex, klass))
+						arr[uiIndex++] = klass;
+				}
+				else
+				{
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s - %x", szTypeString[type->methods[z]->return_type->type], type->methods[z]->name, type->methods[z]->method);
+				}
 			}
 		}
 	}
@@ -310,7 +321,19 @@ void dump_class(Il2CppClass* type)
 		{
 			if (type->vtable[z])
 			{
-				__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, szTypeString[type->vtable[z]->return_type->type], type->vtable[z]->name, type->vtable[z]->method);
+				
+				if (type->vtable[z]->return_type->type == IL2CPP_TYPE_CLASS || type->vtable[z]->return_type->type == IL2CPP_TYPE_VALUETYPE)
+				{
+					Il2CppClass* klass = g_GetClassFromIndex(type->vtable[z]->return_type->data.klassIndex);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, klass->name, type->vtable[z]->name, type->methods[z]->method);
+
+					if (!CheckArr(arr, uiIndex, klass))
+						arr[uiIndex++] = klass;
+				}
+				else
+				{
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, szTypeString[type->vtable[z]->return_type->type], type->vtable[z]->name, type->vtable[z]->method);
+				}
 			}
 		}
 	}
