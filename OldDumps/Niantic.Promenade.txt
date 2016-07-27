@@ -1,0 +1,2138 @@
+JNI_OnLoad
+Injector Called
+CWD: /
+g_GetMonoDomain a0e7af44
+g_OpenAssembly a0e7af48
+g_GetAssemblyImage a0e7a930
+g_GetClassFromName a0e7a954
+g_ClassMethodFromName a0e7a97c
+g_InvokeRuntime a0e7b1ec
+g_GetAssemblies a0e7c798
+g_GetCurrDomain a0e7c71c
+g_GetVirt a0ec1cf4
+g_GetTypeName a0e837a0
+g_GetAssemblyTypes a0e8df10
+GC_free a0edfdcc
+g_GetImageFromIndex a0eb4ebc
+g_GetClassFromIndex a0eb4ef4
+g_SetupClass a0ea9148
+g_GetFieldDefault a0eaed5c
+AppDomain ab0cbfa0
+Number of assemblies: 18
+Assembly 6: Niantic.Promenade, Version=0.0.0.0, Culture=, PublicKeyToken=null
+	Contains 146 classes
+=================Beginning class dump==============================
+Class NianticLabs.Platform AsyncTaskQueue
+	Field: Generic completedTasks
+	Field: WaitCallback <>f__mg$cache0
+	Method: RunAsync - a07702b4
+	Method: RunAsync - a0770360
+	Method: RunOnUnityMain - a0770560
+	Method: RunOnUnityMain - a0770604
+	Method: Process - a07707c8
+	Method: ThreadProc - a0770c48
+	Method: .cctor - a0770e3c
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class System.Threading WaitCallback
+	Method: .ctor - a0c8b428
+	Method: Invoke - a0c8ea94
+	Method: BeginInvoke - a0c8c974
+	Method: EndInvoke - a0c8ebac
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0c8ea94
+	VTable 13: BeginInvoke - a0c8c974
+	VTable 14: EndInvoke - a0c8ebac
+Class  CancellationToken
+	Field: int cancelled
+	Method: get_IsCancelled - a0770eec
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class  Task
+	Field: Action action
+	Field: Action complete
+	Field: CancellationToken token
+	Method: .ctor - a0770530
+	Method: get_IsCancelled - a0770c28
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class System Action
+	Method: .ctor - a07912a4
+	Method: Invoke - a07912b8
+	Method: BeginInvoke - a07913b8
+	Method: EndInvoke - a07913e4
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a07912b8
+	VTable 13: BeginInvoke - a07913b8
+	VTable 14: EndInvoke - a07913e4
+Class NianticLabs.Platform.Tasks IFuture`1
+	Method: get_Value - 0
+Class NianticLabs.Platform.Tasks CancellationToken
+	Field: boolean cancelled
+	Method: get_IsCancelled - a0788948
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class NianticLabs.Platform IapEventHandler
+	Field: IIapEventManager iapManager
+	Field: IapEventDelegateType <>f__mg$cache0
+	Method: ProcessEvents - a0777904
+	Method: SetEventManager - a0777a40
+	Method: IapEventCallback - a0777b0c
+	Method: StoreRefreshCallback - a0777b18
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class NianticLabs.Platform IIapEventManager
+	Method: OnStoreRefresh - 0
+Class  IapEventDelegateType
+	Method: .ctor - a0777384
+	Method: Invoke - a0777398
+	Method: BeginInvoke - a0777490
+	Method: EndInvoke - a0777570
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0777398
+	VTable 13: BeginInvoke - a0777490
+	VTable 14: EndInvoke - a0777570
+Class NianticLabs.Platform ICell
+Class NianticLabs.Platform ICellManager
+	Method: UpdateCells - 0
+Class NianticLabs.Platform IMapTileBuilder
+	Method: OnBeginTile - 0
+	Method: OnEndTile - 0
+	Method: OnPoint - 0
+	Method: OnLinear - 0
+	Method: OnMesh - 0
+	Method: OnGmmBuilding - 0
+	Method: OnArea - 0
+Class NianticLabs.Platform IMapTileManager
+	Method: OnCreateTile - 0
+	Method: OnDeleteTile - 0
+	Method: OnBeginTile - 0
+	Method: OnEndTile - 0
+	Method: OnLayer - 0
+	Method: OnPoint - 0
+	Method: OnLinear - 0
+	Method: OnMesh - 0
+	Method: OnGmmBuilding - 0
+	Method: OnArea - 0
+	Method: OnProcessingPauseCheck - 0
+	Method: SubscribeToLayer - 0
+Class NianticLabs.Platform MapTileEventHandler
+	Field: IMapTileManager tileManager
+	Field: TileEventDelegateType <>f__mg$cache0
+	Field: Vector3AllocatorDelegateType <>f__mg$cache1
+	Field: IntegerAllocatorDelegateType <>f__mg$cache2
+	Field: DeallocatorDelegateType <>f__mg$cache3
+	Method: ProcessEvents - a077a0d4
+	Method: SetTileManager - a077a334
+	Method: SubscribeLayer - a077a3b8
+	Method: TileEventCallback - a077a410
+	Method: Vector3AllocatorCallback - a077bbb8
+	Method: IntegerAllocatorCallback - a077bccc
+	Method: DeallocatorCallback - a077bdb4
+	Method: CreateTileCallback - a077a598
+	Method: DeleteTileCallback - a077a7bc
+	Method: BeginTileCallback - a077a9b4
+	Method: EndTileCallback - a077abac
+	Method: LayerCallback - a077ada4
+	Method: PointCallback - a077af88
+	Method: LinearCallback - a077b1a0
+	Method: MeshCallback - a077b3ec
+	Method: GmmBuildingCallback - a077b638
+	Method: AreaCallback - a077b8d0
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class  TileEventDelegateType
+	Method: .ctor - a0779c60
+	Method: Invoke - a0779c74
+	Method: BeginInvoke - a0779d68
+	Method: EndInvoke - a0779e48
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0779c74
+	VTable 13: BeginInvoke - a0779d68
+	VTable 14: EndInvoke - a0779e48
+Class  Vector3AllocatorDelegateType
+	Method: .ctor - a0779e74
+	Method: Invoke - a0779e88
+	Method: BeginInvoke - a0779fc4
+	Method: EndInvoke - a077a0b4
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0779e88
+	VTable 13: BeginInvoke - a0779fc4
+	VTable 14: EndInvoke - a077a0b4
+Class  IntegerAllocatorDelegateType
+	Method: .ctor - a0779860
+	Method: Invoke - a0779874
+	Method: BeginInvoke - a07799b0
+	Method: EndInvoke - a0779aa0
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0779874
+	VTable 13: BeginInvoke - a07799b0
+	VTable 14: EndInvoke - a0779aa0
+Class  DeallocatorDelegateType
+	Method: .ctor - a07796b4
+	Method: Invoke - a07796c8
+	Method: BeginInvoke - a0779798
+	Method: EndInvoke - a0779854
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a07796c8
+	VTable 13: BeginInvoke - a0779798
+	VTable 14: EndInvoke - a0779854
+Class  CreateTileParams
+	Field: ulong tileId
+	Field: double x
+	Field: double y
+	Field: double z
+	Field: double size
+	Field: int level
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class  DeleteTileParams
+	Field: ulong tileId
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class  BeginTileParams
+	Field: ulong tileId
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class  EndTileParams
+	Field: ulong tileId
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class  LayerParams
+	Field: MapLayer layerId
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class NianticLabs.Platform MapLayer
+	Field: int value__
+	Field: MapLayer UNDEFINED = 0
+	Field: MapLayer BOUNDARIES = 1
+	Field: MapLayer BUILDINGS = 2
+	Field: MapLayer LANDMASS = 3
+	Field: MapLayer LANDUSE = 4
+	Field: MapLayer PLACES = 5
+	Field: MapLayer POIS = 6
+	Field: MapLayer ROADS = 7
+	Field: MapLayer TRANSIT = 8
+	Field: MapLayer WATER = 9
+	Field: MapLayer DEBUG_TILE_BOUNDARIES = 10
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class  PointParams
+	Field: uint vertices
+	Field: FeatureKind typeId
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class NianticLabs.Platform FeatureKind
+	Field: int value__
+	Field: FeatureKind UNDEFINED = 0
+	Field: FeatureKind BASIN = 1
+	Field: FeatureKind CANAL = 2
+	Field: FeatureKind CEMETERY = 3
+	Field: FeatureKind CINEMA = 4
+	Field: FeatureKind COLLEGE = 5
+	Field: FeatureKind COMMERCIAL = 6
+	Field: FeatureKind COMMON = 7
+	Field: FeatureKind DAM = 8
+	Field: FeatureKind DITCH = 9
+	Field: FeatureKind DOCK = 10
+	Field: FeatureKind DRAIN = 11
+	Field: FeatureKind FARM = 12
+	Field: FeatureKind FARMLAND = 13
+	Field: FeatureKind FARMYARD = 14
+	Field: FeatureKind FOOTWAY = 15
+	Field: FeatureKind FOREST = 16
+Class  AreaParams
+	Field: uint vertices
+	Field: uint indices
+	Field: uint exterior_edges
+	Field: FeatureKind typeId
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class NianticLabs.Platform N2EntryPoints
+	Field: N2NativeBindings n2
+	Field: N2Api n2Api
+	Method: CheckResult - a07764a4
+	Method: GetProc - 0
+	Method: LoadApiBindings - a077c094
+	Method: GetN2Api - a077c9e4
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class  N2NativeBindings
+	Field: uint N2PluginFlushExtLogs
+	Field: uint N2PluginGetDeviceCountryCode
+	Field: uint N2PluginGetDeviceLanguageCode
+	Field: uint N2PluginGetState
+	Field: uint N2PluginOnNativeEvent
+	Field: uint N2PluginOnPause
+	Field: uint N2PluginOnResume
+	Field: uint N2PluginOnStart
+	Field: uint N2PluginOnStop
+	Field: uint N2PluginOnUpdate
+	Field: uint N2PluginSetExtLogLevel
+	Field: uint N2PluginSetBackgroundMode
+	Field: uint N2MapClearCache
+	Field: uint N2MapGetCompassHeading
+	Field: uint N2MapGetCurrentLocation
+	Field: uint N2MapGetView
+	Field: uint N2MapGetPosition
+	Field: uint N2MapGetWorldLocation
+	Field: uint N2MapS2CacheSetCellData
+	Field: uint N2MapS2CacheUpdateVisibleCells
+	Field: uint N2MapSetView
+	Field: uint N2MapSetMode
+	Field: uint N2MapSubscribeLayer
+	Field: uint N2MapUpdateTiles
+	Field: uint N2ServerClearAuthToken
+	Field: uint N2ServerClearResponse
+	Field: uint N2ServerGetResponsePayloads
+	Field: uint N2ServerHasResponse
+	Field: uint N2ServerProcessEvents
+	Field: uint N2ServerProcessPendingRequests
+	Field: uint N2ServerRefreshAuthToken
+	Field: uint N2ServerResetAuthToken
+	Field: uint N2ServerSend
+	Field: uint N2ServerSetDesktopRcPath
+	Field: uint N2ServerSetServer
+	Field: uint N2AuthClearGoogleToken
+	Field: uint N2AuthGetGoogleToken
+	Field: uint N2AuthRefreshGoogleToken
+	Field: uint N2S2GetLatLngFromPartialS2CellId
+	Field: uint N2S2GetLatLng
+	Field: uint N2IapGetIapState
+	Field: uint N2IapGetPurchaseResult
+	Field: uint N2IapGetSkusAndBalances
+	Field: uint N2IapInitialize
+	Field: uint N2IapProcessEvents
+	Field: uint N2IapPurchaseItem
+	Field: uint N2IapRefreshSkusAndBalances
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class  N2Api
+	Field: N2PluginFlushExtLogs_ N2PluginFlushExtLogs
+	Field: N2PluginGetDeviceCountryCode_ N2PluginGetDeviceCountryCode
+	Field: N2PluginGetDeviceLanguageCode_ N2PluginGetDeviceLanguageCode
+	Field: N2PluginGetState_ N2PluginGetState
+	Field: N2PluginOnNativeEvent_ N2PluginOnNativeEvent
+	Field: N2PluginOnPause_ N2PluginOnPause
+	Field: N2PluginOnResume_ N2PluginOnResume
+	Field: N2PluginOnStart_ N2PluginOnStart
+	Field: N2PluginOnStop_ N2PluginOnStop
+	Field: N2PluginOnUpdate_ N2PluginOnUpdate
+	Field: N2PluginSetExtLogLevel_ N2PluginSetExtLogLevel
+	Field: N2PluginSetBackgroundMode_ N2PluginSetBackgroundMode
+	Field: N2MapClearCache_ N2MapClearCache
+	Field: N2MapGetCompassHeading_ N2MapGetCompassHeading
+	Field: N2MapGetCurrentLocation_ N2MapGetCurrentLocation
+	Field: N2MapGetView_ N2MapGetView
+	Field: N2MapGetPosition_ N2MapGetPosition
+	Field: N2MapGetWorldLocation_ N2MapGetWorldLocation
+	Field: N2MapS2CacheSetCellData_ N2MapS2CacheSetCellData
+	Field: N2MapS2CacheUpdateVisibleCells_ N2MapS2CacheUpdateVisibleCells
+	Field: N2MapSetView_ N2MapSetView
+	Field: N2MapSetMode_ N2MapSetMode
+	Field: N2MapSubscribeLayer_ N2MapSubscribeLayer
+	Field: N2MapUpdateTiles_ N2MapUpdateTiles
+	Field: N2ServerClearAuthToken_ N2ServerClearAuthToken
+	Field: N2ServerClearResponse_ N2ServerClearResponse
+	Field: N2ServerGetResponsePayloads_ N2ServerGetResponsePayloads
+	Field: N2ServerHasResponse_ N2ServerHasResponse
+	Field: N2ServerProcessEvents_ N2ServerProcessEvents
+	Field: N2ServerProcessPendingRequests_ N2ServerProcessPendingRequests
+	Field: N2ServerRefreshAuthToken_ N2ServerRefreshAuthToken
+	Field: N2ServerResetAuthToken_ N2ServerResetAuthToken
+	Field: N2ServerSend_ N2ServerSend
+	Field: N2ServerSetDesktopRcPath_ N2ServerSetDesktopRcPath
+Class  N2MapGetCompassHeading_
+	Method: .ctor - a077d8e0
+	Method: Invoke - a077d8f4
+	Method: BeginInvoke - a077d9f0
+	Method: EndInvoke - a077daac
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a077d8f4
+	VTable 13: BeginInvoke - a077d9f0
+	VTable 14: EndInvoke - a077daac
+Class  N2MapGetCurrentLocation_
+	Method: .ctor - a077dae4
+	Method: Invoke - a0778b84
+	Method: BeginInvoke - a077db54
+	Method: EndInvoke - a077dc10
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0778b84
+	VTable 13: BeginInvoke - a077db54
+	VTable 14: EndInvoke - a077dc10
+Class  N2MapGetView_
+	Method: .ctor - a077dee0
+	Method: Invoke - a0777f30
+	Method: BeginInvoke - a077df78
+	Method: EndInvoke - a077e034
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+Class  N2ServerClearResponse_
+	Method: .ctor - a0780820
+	Method: Invoke - a0780834
+	Method: BeginInvoke - a0780958
+	Method: EndInvoke - a0780a24
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0780834
+	VTable 13: BeginInvoke - a0780958
+	VTable 14: EndInvoke - a0780a24
+Class  N2ServerGetResponsePayloads_
+	Method: .ctor - a0780a5c
+	Method: Invoke - a0780a70
+	Method: BeginInvoke - a0780be0
+	Method: EndInvoke - a0780cbc
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0780a70
+	VTable 13: BeginInvoke - a0780be0
+	VTable 14: EndInvoke - a0780cbc
+Class  N2ServerHasResponse_
+	Method: .ctor - a0780cf4
+	Method: Invoke - a0780d08
+Class  N2AuthRefreshGoogleToken_
+	Method: .ctor - a077cfbc
+	Method: Invoke - a077cfd0
+	Method: BeginInvoke - a077d130
+	Method: EndInvoke - a077d168
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a077cfd0
+Class  N2IapGetIapState_
+	Method: .ctor - a077d194
+	Method: Invoke - a07753b4
+	Method: BeginInvoke - a077d1b8
+	Method: EndInvoke - a077d274
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a07753b4
+	VTable 13: BeginInvoke - a077d1b8
+	VTable 14: EndInvoke - a077d274
+Class  N2IapGetPurchaseResult_
+	Method: .ctor - a077d2ac
+	Method: Invoke - a0775570
+	Method: BeginInvoke - a077d2d0
+	Method: EndInvoke - a077d38c
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0775570
+	VTable 13: BeginInvoke - a077d2d0
+	VTable 14: EndInvoke - a077d38c
+Class  N2IapGetSkusAndBalances_
+	Method: .ctor - a077d3c4
+	Method: Invoke - a0775f78
+	Method: BeginInvoke - a077d45c
+	Method: EndInvoke - a077d4ac
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0775f78
+	VTable 13: BeginInvoke - a077d45c
+	VTable 14: EndInvoke - a077d4ac
+Class  N2IapInitialize_
+	Method: .ctor - a077d4d8
+	Method: Invoke - a07761cc
+	Method: BeginInvoke - a077d4f8
+	Method: EndInvoke - a077d524
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a07761cc
+	VTable 13: BeginInvoke - a077d4f8
+	VTable 14: EndInvoke - a077d524
+Class  N2IapProcessEvents_
+	Method: .ctor - a077d550
+	Method: Invoke - a0774394
+	Method: BeginInvoke - a077d5a4
+	Method: EndInvoke - a077d684
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+Class  ApiError
+	Field: int value__
+	Field: ApiError SUCCESS = 0
+	Field: ApiError PLUGIN_NOT_READY = 1
+Class  NativePresentationDataDelegateType
+	Method: .ctor - a0782428
+	Method: Invoke - a078243c
+	Method: BeginInvoke - a078250c
+	Method: EndInvoke - a07825c8
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a078243c
+	VTable 13: BeginInvoke - a078250c
+	VTable 14: EndInvoke - a07825c8
+Class  NativeItemQuantityDelegateType
+	Method: .ctor - a0782084
+	Method: Invoke - a0782098
+	Method: BeginInvoke - a0782168
+	Method: EndInvoke - a0782224
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+Class NianticLabs.Platform NativeEventDispatcher
+	Field: Generic handlers
+	Field: Generic protoParsers
+	Field: Thread workerThread
+	Field: Generic <>f__mg$cache0
+	Field: Generic <>f__mg$cache1
+	Field: Generic <>f__mg$cache2
+	Field: Generic <>f__mg$cache3
+	Field: Generic <>f__mg$cache4
+	Field: Generic <>f__mg$cache5
+	Field: Generic <>f__mg$cache6
+	Field: Generic <>f__mg$cache7
+	Method: .ctor - a0782780
+	Method: Start - a0782b14
+	Method: Stop - a0782e1c
+	Method: AddListener - a0783128
+	Method: RemoveListener - a07833a4
+	Method: RegisterParsers - a07828c8
+	Method: RegisterEventHandlers - a0782b40
+	Method: UnregisterEventHandlers - a0782e4c
+	Method: DispatchEvents - a0783620
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class System.Threading Thread
+	Field: int lock_thread_id
+	Field: uint system_thread_handle
+	Field: mvar cached_culture_info
+	Field: uint unused0
+	Field: boolean threadpool_thread
+	Field: uint name
+	Field: int name_len
+	Field: ThreadState state
+	Field: mvar abort_exc
+	Field: int abort_state_handle
+	Field: long thread_id
+	Field: uint start_notify
+	Field: uint stack_ptr
+	Field: FuncPtr static_data
+	Field: uint jit_data
+	Field: uint lock_data
+	Field: mvar current_appcontext
+	Field: int stack_size
+	Field: mvar start_obj
+	Field: uint appdomain_refs
+	Field: int interruption_requested
+	Field: uint suspend_event
+	Field: uint suspended_event
+	Field: uint resume_event
+	Field: uint synch_cs
+	Field: uint serialized_culture_info
+	Field: int serialized_culture_info_len
+	Field: uint serialized_ui_culture_info
+	Field: int serialized_ui_culture_info_len
+	Field: boolean thread_dump_requested
+	Field: uint end_stack
+	Field: boolean thread_interrupt_requested
+	Field: byte apartment_state
+	Field: int critical_region_level
+	Field: int small_id
+	Field: uint manage_callback
+	Field: mvar pending_exception
+	Field: ExecutionContext ec_to_set
+	Field: uint interrupt_on_stop
+	Field: uint unused3
+	Field: uint unused4
+	Field: uint unused5
+	Field: uint unused6
+	Field: cmod_reqd local_slots
+	Field: ExecutionContext _ec
+	Field: MulticastDelegate threadstart
+	Field: int managed_id
+	Field: IPrincipal _principal
+	Field: Hashtable datastorehash
+	Field: mvar datastore_lock
+	Field: boolean in_currentculture
+	Field: mvar culture_lock
+	Method: .ctor - a0c8b834
+	Method: .cctor - a0c8b914
+	Method: get_CurrentContext - a0c8b9d4
+	Method: CurrentThread_internal - a0c8b9e0
+	Method: get_CurrentThread - a0c5e118
+	Method: FreeLocalSlotValues - a0c8b9e4
+	Method: GetDomain - a0c8b9f0
+	Method: GetDomainID - a0c8b9fc
+	Method: ResetAbort_internal - a0c8ba00
+	Method: ResetAbort - a0c8ba04
+	Method: Sleep_internal - a0c8ba9c
+	Method: Sleep - a0c8baa4
+	Method: Thread_internal - a0c8bbac
+	Method: Thread_init - a0c8b910
+	Method: GetCachedCurrentCulture - a0c8bbb0
+	Method: GetSerializedCurrentCulture - a0c8bbb4
+	Method: SetCachedCurrentCulture - a0c8bbb8
+	Method: GetCachedCurrentUICulture - a0c8bbbc
+	Method: GetSerializedCurrentUICulture - a0c8bbc0
+	Method: SetCachedCurrentUICulture - a0c8bbc4
+	Method: SetSerializedCurrentUICulture - a0c8bbc8
+	Method: get_CurrentCulture - a0c8bbcc
+	Method: get_CurrentUICulture - a0c8bf30
+	Method: set_CurrentUICulture - a0c8c210
+	Method: set_IsBackground - a0c8c420
+	Method: SetName_internal - a0c8c440
+	Method: set_Name - a0c8c444
+	Method: Abort_internal - a0c8c448
+	Method: Abort - a0c8c44c
+	Method: Join_internal - a0c8c454
+	Method: Join - a0c8c458
+	Method: MemoryBarrier - a0c8c464
+	Method: Start - a0c8c468
+	Method: Thread_free_internal - a0c8c610
+	Method: Finalize - a0c8c614
+	Method: SetState - a0c8c438
+	Method: ClrState - a0c8c43c
+	Method: VolatileRead - a0c8c67c
+	Method: GetNewManagedId - a0c8c684
+	Method: GetNewManagedId_internal - a0c8c71c
+	Method: get_ExecutionContext - a0c5e1b0
+	Method: get_ManagedThreadId - a0c8c720
+	Method: GetHashCode - a0c8c7dc
+	Method: GetCompressedStack - a0c8a004
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0c8c614
+	VTable 2: GetHashCode - a0c8c7dc
+	VTable 3: ToString - a0b54704
+Class System.Threading ThreadState
+	Field: int value__
+	Field: ThreadState Running = 0
+	Field: ThreadState StopRequested = 1
+	Field: ThreadState SuspendRequested = 2
+	Field: ThreadState Background = 4
+	Field: ThreadState Unstarted = 8
+	Field: ThreadState Stopped = 16
+	Field: ThreadState WaitSleepJoin = 32
+	Field: ThreadState Suspended = 64
+	Field: ThreadState AbortRequested = 128
+	Field: ThreadState Aborted = 256
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class System.Threading ExecutionContext
+	Field: SecurityContext _sc
+	Field: boolean _suppressFlow
+	Field: boolean _capture
+	Method: .ctor - a0c8a3b8
+	Method: .ctor - a0c8a3c0
+	Method: .ctor - a0c8a488
+	Method: Capture - a0c8a52c
+	Method: GetObjectData - a0c8a678
+	Method: get_SecurityContext - a0c5e32c
+	Method: set_SecurityContext - a0c8a670
+	Method: get_FlowSuppressed - a0c8a668
+	Method: IsFlowSuppressed - a0c8a75c
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+	VTable 4: GetObjectData - a0c8a678
+Class System.Security SecurityContext
+	Field: boolean _capture
+	Field: uint _winid
+	Field: CompressedStack _stack
+	Field: boolean _suppressFlowWindowsIdentity
+	Field: boolean _suppressFlow
+	Method: .ctor - a0c5dee0
+	Method: .ctor - a0c5dee8
+	Method: Capture - a0c5dfc4
+	Method: get_FlowSuppressed - a0c5e3cc
+	Method: get_CompressedStack - a0c5e568
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class System.Threading CompressedStack
+	Field: ArrayList _list
+	Method: .ctor - a0c89e94
+	Method: .ctor - a0c89f40
+	Method: CreateCopy - a0c5df34
+	Method: Capture - a0c5e3d4
+	Method: GetObjectData - a0c8a058
+	Method: IsEmpty - a0c8a10c
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+	VTable 4: GetObjectData - a0c8a058
+Class System.Collections ArrayList
+	Field: int DefaultInitialCapacity = 4
+	Field: int _size
+	Field: cmod_reqd _items
+	Field: int _version
+	Field: cmod_reqd EmptyArray
+	Method: .ctor - a0ac8c84
+	Method: .ctor - a0ac8d48
+	Method: .ctor - a0ac8f1c
+	Method: .ctor - a0ac9120
+	Method: .cctor - a0ac9200
+	Method: get_Item - a0ac92a4
+	Method: set_Item - a0ac93dc
+	Method: get_Count - a0ac954c
+	Method: get_Capacity - a0ac9554
+	Method: set_Capacity - a0ac9570
+	Method: get_IsFixedSize - a0ac96d0
+	Method: get_IsReadOnly - a0ac96d8
+	Method: get_IsSynchronized - a0ac96e0
+	Method: get_SyncRoot - a0ac96e8
+	Method: EnsureCapacity - a0ac96ec
+	Method: Shift - a0ac97f4
+	Method: Add - a0ac9980
+	Method: Clear - a0ac9a2c
+	Method: Contains - a0ac9a68
+	Method: IndexOf - a0ac9ac4
+	Method: IndexOf - a0ac9b00
+	Method: IndexOf - a0ac9b50
+	Method: Insert - a0ac9d8c
+	Method: InsertRange - a0ac9f18
+	Method: Remove - a0aca21c
+	Method: RemoveAt - a0aca290
+	Method: CopyTo - a0aca3c4
+	Method: CopyTo - a0aca3e8
+	Method: CopyTo - a0aca43c
+	Method: GetEnumerator - a0aca590
+	Method: AddRange - a0aca708
+	Method: Sort - a0aca748
+	Method: Sort - a0aca7f0
+	Method: ToArray - a0aca824
+	Method: ToArray - a0aca8e8
+	Method: Clone - a0aca930
+	Method: ThrowNewArgumentOutOfRangeException - a0ac9068
+	Method: Synchronized - a0aca9d8
+	Method: ReadOnly - a0acab3c
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+	VTable 4: GetEnumerator - a0aca590
+	VTable 5: Clone - a0aca930
+	VTable 6: get_Count - a0ac954c
+	VTable 7: get_IsSynchronized - a0ac96e0
+	VTable 8: get_SyncRoot - a0ac96e8
+	VTable 9: CopyTo - a0aca3e8
+	VTable 10: get_IsFixedSize - a0ac96d0
+	VTable 11: get_IsReadOnly - a0ac96d8
+	VTable 12: get_Item - a0ac92a4
+	VTable 13: set_Item - a0ac93dc
+	VTable 14: Add - a0ac9980
+	VTable 15: Clear - a0ac9a2c
+	VTable 16: Contains - a0ac9a68
+	VTable 17: IndexOf - a0ac9ac4
+	VTable 18: Insert - a0ac9d8c
+	VTable 19: Remove - a0aca21c
+	VTable 20: RemoveAt - a0aca290
+	VTable 21: get_Item - a0ac92a4
+	VTable 22: set_Item - a0ac93dc
+	VTable 23: get_Count - a0ac954c
+	VTable 24: get_Capacity - a0ac9554
+	VTable 25: set_Capacity - a0ac9570
+	VTable 26: get_IsFixedSize - a0ac96d0
+	VTable 27: get_IsReadOnly - a0ac96d8
+	VTable 28: get_IsSynchronized - a0ac96e0
+	VTable 29: get_SyncRoot - a0ac96e8
+	VTable 30: Add - a0ac9980
+	VTable 31: Clear - a0ac9a2c
+	VTable 32: Contains - a0ac9a68
+	VTable 33: IndexOf - a0ac9ac4
+	VTable 34: IndexOf - a0ac9b00
+	VTable 35: IndexOf - a0ac9b50
+	VTable 36: Insert - a0ac9d8c
+	VTable 37: InsertRange - a0ac9f18
+	VTable 38: Remove - a0aca21c
+	VTable 39: RemoveAt - a0aca290
+	VTable 40: CopyTo - a0aca3c4
+	VTable 41: CopyTo - a0aca3e8
+	VTable 42: CopyTo - a0aca43c
+	VTable 43: GetEnumerator - a0aca590
+	VTable 44: AddRange - a0aca708
+	VTable 45: Sort - a0aca748
+	VTable 46: Sort - a0aca7f0
+	VTable 47: ToArray - a0aca824
+	VTable 48: ToArray - a0aca8e8
+	VTable 49: Clone - a0aca930
+Class System MulticastDelegate
+	Field: MulticastDelegate prev
+	Field: MulticastDelegate kpm_next
+	Method: GetObjectData - a0b4b718
+	Method: DynamicInvokeImpl - a0b4b738
+	Method: Equals - a0b4b78c
+	Method: GetHashCode - a0b4b8a8
+	Method: GetInvocationList - a0b4b8b0
+	Method: CombineImpl - a0b4bba4
+	Method: BaseEquals - a0b4be50
+	Method: KPM - a0b4be58
+	Method: RemoveImpl - a0b4bfb4
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+Class System.Security.Principal IPrincipal
+Class System.Collections Hashtable
+	Field: int CHAIN_MARKER = -2147483648
+	Field: int inUse
+	Field: int modificationCount
+	Field: float loadFactor
+	Field: cmod_reqd table
+	Field: cmod_reqd hashes
+	Field: int threshold
+	Field: HashKeys hashKeys
+	Field: HashValues hashValues
+	Field: IHashCodeProvider hcpRef
+	Field: IComparer comparerRef
+	Field: SerializationInfo serializationInfo
+	Field: IEqualityComparer equalityComparer
+	Field: cmod_reqd primeTbl
+	Method: .ctor - a0ad0850
+	Method: .ctor - a0ad08a0
+	Method: .ctor - a0ad087c
+	Method: .ctor - a0ad0e14
+	Method: .ctor - a0ad0e3c
+	Method: .ctor - a0ad0f7c
+	Method: .ctor - a0ad0fa4
+	Method: .ctor - a0ad1208
+	Method: .ctor - a0ad1230
+	Method: .ctor - a0ad1258
+	Method: .ctor - a0ad1278
+	Method: .ctor - a0ad12e8
+	Method: .ctor - a0ad12b4
+	Method: .cctor - a0ad1320
+	Method: System.Collections.IEnumerable.GetEnumerator - a0ad13e8
+	Method: set_comparer - a0ad0e0c
+	Method: set_hcp - a0ad0e04
+	Method: get_Count - a0ad14e4
+	Method: get_IsSynchronized - a0ad14ec
+	Method: get_SyncRoot - a0ad14f4
+	Method: get_IsReadOnly - a0ad14f8
+	Method: get_Keys - a0ad1500
+	Method: get_Values - a0ad1650
+	Method: get_Item - a0ad17a0
+	Method: set_Item - a0ad19d4
+	Method: CopyTo - a0ad1f24
+	Method: Add - a0ad2214
+	Method: Clear - a0ad2230
+	Method: Contains - a0ad22ec
+	Method: GetEnumerator - a0ad253c
+	Method: Remove - a0ad25d0
+	Method: ContainsKey - a0ad2764
+	Method: Clone - a0ad279c
+	Method: GetObjectData - a0ad282c
+	Method: OnDeserialization - a0ad2c14
+	Method: Synchronized - a0ad342c
+	Method: GetHash - a0ad3610
+	Method: KeyEquals - a0ad3720
+	Method: AdjustThreshold - a0ad33e8
+	Method: SetTable - a0ad0d38
+	Method: Find - a0ad230c
+	Method: Rehash - a0ad38cc
+	Method: PutImpl - a0ad19f0
+	Method: CopyToArray - a0ad2ad0
+	Method: TestPrime - a0ad3bc0
+	Method: CalcPrime - a0ad3c4c
+	Method: ToPrime - a0ad0b60
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+	VTable 4: System.Collections.IEnumerable.GetEnumerator - a0ad13e8
+	VTable 5: Clone - a0ad279c
+	VTable 6: GetObjectData - a0ad282c
+	VTable 7: get_Count - a0ad14e4
+	VTable 8: get_IsSynchronized - a0ad14ec
+	VTable 9: get_SyncRoot - a0ad14f4
+	VTable 10: CopyTo - a0ad1f24
+	VTable 11: get_IsReadOnly - a0ad14f8
+	VTable 12: get_Item - a0ad17a0
+	VTable 13: set_Item - a0ad19d4
+	VTable 14: get_Keys - a0ad1500
+	VTable 15: get_Values - a0ad1650
+	VTable 16: Add - a0ad2214
+	VTable 17: Clear - a0ad2230
+	VTable 18: Contains - a0ad22ec
+	VTable 19: GetEnumerator - a0ad253c
+	VTable 20: Remove - a0ad25d0
+	VTable 21: OnDeserialization - a0ad2c14
+	VTable 22: get_Count - a0ad14e4
+	VTable 23: get_IsSynchronized - a0ad14ec
+	VTable 24: get_SyncRoot - a0ad14f4
+	VTable 25: get_IsReadOnly - a0ad14f8
+	VTable 26: get_Keys - a0ad1500
+	VTable 27: get_Values - a0ad1650
+	VTable 28: get_Item - a0ad17a0
+	VTable 29: set_Item - a0ad19d4
+	VTable 30: CopyTo - a0ad1f24
+	VTable 31: Add - a0ad2214
+	VTable 32: Clear - a0ad2230
+	VTable 33: Contains - a0ad22ec
+	VTable 34: GetEnumerator - a0ad253c
+	VTable 35: Remove - a0ad25d0
+	VTable 36: ContainsKey - a0ad2764
+	VTable 37: Clone - a0ad279c
+	VTable 38: GetObjectData - a0ad282c
+	VTable 39: OnDeserialization - a0ad2c14
+	VTable 40: GetHash - a0ad3610
+	VTable 41: KeyEquals - a0ad3720
+Class  HashKeys
+	Field: Hashtable host
+	Method: .ctor - a0ad15a0
+	Method: get_Count - a0ad4454
+	Method: get_IsSynchronized - a0ad4490
+	Method: get_SyncRoot - a0ad44cc
+	Method: CopyTo - a0ad4508
+	Method: GetEnumerator - a0ad46f4
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+	VTable 4: GetEnumerator - a0ad46f4
+	VTable 5: get_Count - a0ad4454
+	VTable 6: get_IsSynchronized - a0ad4490
+	VTable 7: get_SyncRoot - a0ad44cc
+	VTable 8: CopyTo - a0ad4508
+	VTable 9: get_Count - a0ad4454
+	VTable 10: get_IsSynchronized - a0ad4490
+	VTable 11: get_SyncRoot - a0ad44cc
+	VTable 12: CopyTo - a0ad4508
+	VTable 13: GetEnumerator - a0ad46f4
+Class  HashValues
+	Field: Hashtable host
+	Method: .ctor - a0ad16f0
+	Method: get_Count - a0ad478c
+	Method: get_IsSynchronized - a0ad47c8
+	Method: get_SyncRoot - a0ad4804
+	Method: CopyTo - a0ad4840
+	Method: GetEnumerator - a0ad4a2c
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+	VTable 4: GetEnumerator - a0ad4a2c
+	VTable 5: get_Count - a0ad478c
+	VTable 6: get_IsSynchronized - a0ad47c8
+	VTable 7: get_SyncRoot - a0ad4804
+	VTable 8: CopyTo - a0ad4840
+	VTable 9: get_Count - a0ad478c
+	VTable 10: get_IsSynchronized - a0ad47c8
+	VTable 11: get_SyncRoot - a0ad4804
+	VTable 12: CopyTo - a0ad4840
+	VTable 13: GetEnumerator - a0ad4a2c
+Class System.Collections IHashCodeProvider
+	Method: GetHashCode - 0
+Class System.Collections IComparer
+	Method: Compare - 0
+Class System.Runtime.Serialization SerializationInfo
+	Field: Hashtable serialized
+	Field: ArrayList values
+	Field: String assemblyName
+	Field: String fullTypeName
+	Field: IFormatterConverter converter
+	Method: .ctor - a0bd79f8
+	Method: get_AssemblyName - a0bdd4b8
+	Method: get_FullTypeName - a0bdd4c0
+	Method: get_MemberCount - a0bdd2f4
+	Method: AddValue - a0bd94a4
+	Method: GetValue - a0be1a30
+	Method: SetType - a0be1cf0
+	Method: GetEnumerator - a0bdd330
+	Method: AddValue - a0be1e6c
+	Method: AddValue - a0be1f70
+	Method: AddValue - a0be2074
+	Method: AddValue - a0be2178
+	Method: AddValue - a0be22a0
+	Method: AddValue - a0be23ac
+	Method: AddValue - a0be24b0
+	Method: AddValue - a0be25bc
+	Method: AddValue - a0be26c8
+	Method: GetBoolean - a0be27d4
+	Method: GetInt16 - a0be28fc
+	Method: GetInt32 - a0be2a24
+	Method: GetInt64 - a0be2b4c
+	Method: GetString - a0be2c74
+	Method: GetUInt32 - a0be2db0
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class System.Runtime.Serialization IFormatterConverter
+	Method: Convert - 0
+	Method: ToBoolean - 0
+	Method: ToInt16 - 0
+	Method: ToInt32 - 0
+	Method: ToInt64 - 0
+	Method: ToString - 0
+	Method: ToUInt32 - 0
+Class System.Collections IEqualityComparer
+	Method: Equals - 0
+	Method: GetHashCode - 0
+Class NianticLabs.Platform MapMode
+	Field: int value__
+	Field: MapMode UNDEFINED = 0
+	Field: MapMode SPHERICAL = 1
+	Field: MapMode MERCATOR = 2
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class NianticLabs.Platform CacheType
+	Field: int value__
+	Field: CacheType UNDEFINED = 0
+	Field: CacheType MEMORY = 1
+	Field: CacheType DISK = 2
+	Field: CacheType SPATIAL_INDEX = 3
+	Field: CacheType MAP = 4
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class NianticLabs.Platform ChannelAuthEvent
+	Field: int value__
+	Field: ChannelAuthEvent UNDEFINED = 0
+	Field: ChannelAuthEvent TOKEN_REQUEST_FAILED = 1
+	Field: ChannelAuthEvent REFRESH_REQUESTED = 2
+	Field: ChannelAuthEvent PROACTIVE_REFRESH_REQUESTED = 3
+	Field: ChannelAuthEvent GOT_NIANTIC_TOKEN = 4
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class NianticLabs.Platform RpcStatus
+	Field: int value__
+	Field: RpcStatus UNDEFINED = 0
+	Field: RpcStatus SUCCESS = 1
+	Field: RpcStatus BAD_RESPONSE = 2
+	Field: RpcStatus ACTION_ERROR = 3
+	Field: RpcStatus DISPATCH_ERROR = 4
+	Field: RpcStatus SERVER_ERROR = 5
+	Field: RpcStatus ASSIGNMENT_ERROR = 6
+	Field: RpcStatus PROTOCOL_ERROR = 7
+	Field: RpcStatus AUTHENTICATION_ERROR = 8
+	Field: RpcStatus CANCELLED_REQUEST = 9
+	Field: RpcStatus UNKNOWN_ERROR = 10
+	Field: RpcStatus NO_RETRIES_ERROR = 11
+	Field: RpcStatus UNAUTHORIZED_ERROR = 12
+	Field: RpcStatus PARSING_ERROR = 13
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class NianticLabs.Platform LocationStatus
+	Field: int value__
+	Field: LocationStatus UNDEFINED = 0
+	Field: LocationStatus STOPPED = 1
+	Field: LocationStatus INITIALIZED = 2
+	Field: LocationStatus RUNNING = 3
+	Field: LocationStatus FAILED = 4
+	Field: LocationStatus PERMISSION_DENIED = 5
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class NianticLabs.Platform LocationType
+	Field: int value__
+	Field: LocationType UNDEFINED = 0
+	Field: LocationType MEASURED = 1
+	Field: LocationType COMPUTED = 2
+	Field: LocationType INTERPOLATED = 3
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class NianticLabs.Platform IapState
+	Field: int value__
+	Field: IapState UNDEFINED = 0
+	Field: IapState INITIALIZING = 1
+	Field: IapState TRANSACTION_IN_PROGRESS = 2
+	Field: IapState READY = 3
+	Field: IapState REFRESHING_STORE_STATE = 4
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class NianticLabs.Platform PurchaseResult
+	Field: int value__
+	Field: PurchaseResult UNDEFINED = 0
+	Field: PurchaseResult NO_PURCHASE = 1
+	Field: PurchaseResult FAILURE = 2
+	Field: PurchaseResult BALANCE_TOO_LOW = 3
+	Field: PurchaseResult SKU_NOT_AVAILABLE = 4
+	Field: PurchaseResult IN_PROGRESS = 5
+	Field: PurchaseResult SUCCESS = 6
+	Field: PurchaseResult PURCHASE_DEFERRED = 7
+	Field: PurchaseResult USER_CANCELLED = 8
+	Field: PurchaseResult BILLING_UNAVAILABLE = 9
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class NianticLabs.Platform IapApi
+	Field: StoreItemDelegate storeItemDelegate
+	Field: BalanceDelegate balanceDelegate
+	Field: BalanceDelegate priceDelegate
+	Field: BalanceDelegate currencyGrantedDelegate
+	Field: PresentationDataDelegate presentationDataDelegate
+	Field: ItemQuantityDelegate itemQuantityDelegate
+	Field: NativeStoreItemDelegateType <>f__mg$cache0
+	Field: NativeBalanceDelegateType <>f__mg$cache1
+	Field: NativeBalanceDelegateType <>f__mg$cache2
+	Field: NativeBalanceDelegateType <>f__mg$cache3
+	Field: NativePresentationDataDelegateType <>f__mg$cache4
+	Field: NativeItemQuantityDelegateType <>f__mg$cache5
+	Method: ReportNativeStoreItem - a0773e28
+	Method: ProcessEvents - a0774238
+	Method: ReportNativeBalance - a0774550
+	Method: ReportNativePrice - a0774838
+	Method: ReportNativeCurrencyGranted - a0774938
+	Method: ReportNativePresentationData - a0774a38
+	Method: ReportNativeItemQuantityDelegate - a0774e1c
+	Method: MarshalBalanceToDelegate - a077460c
+	Method: GetIapState - a07752b8
+	Method: GetPurchaseResult - a0775474
+	Method: RefreshSkusAndBalances - a0775630
+	Method: GetSkusAndBalances - a0775818
+	Method: Initialize - a07760d8
+	Method: PurchaseItem - a07762c0
+	Method: CheckResult - a0774478
+	Method: GetStoreSkusAndBalances - a0776820
+	Method: .cctor - a0776b30
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class  StoreItemDelegate
+	Method: .ctor - a0776ae0
+	Method: Invoke - a0774110
+	Method: BeginInvoke - a0777810
+	Method: EndInvoke - a07778f8
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0774110
+	VTable 13: BeginInvoke - a0777810
+	VTable 14: EndInvoke - a07778f8
+Class  BalanceDelegate
+	Method: .ctor - a0776af4
+	Method: Invoke - a07751ac
+	Method: BeginInvoke - a0777240
+	Method: EndInvoke - a0777308
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a07751ac
+	VTable 13: BeginInvoke - a0777240
+	VTable 14: EndInvoke - a0777308
+Class  PresentationDataDelegate
+	Method: .ctor - a0776b08
+	Method: Invoke - a0774ccc
+	Method: BeginInvoke - a0777728
+	Method: EndInvoke - a0777760
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a0774ccc
+	VTable 13: BeginInvoke - a0777728
+	VTable 14: EndInvoke - a0777760
+Class  ItemQuantityDelegate
+	Method: .ctor - a0776b1c
+	Method: Invoke - a07750a0
+	Method: BeginInvoke - a07775dc
+	Method: EndInvoke - a07776a4
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a07750a0
+	VTable 13: BeginInvoke - a07775dc
+	VTable 14: EndInvoke - a07776a4
+Class  StoreItem
+	Field: uint sku
+	Field: uint localCurrencyPrice
+	Field: int isVendorItem
+	Field: int canBePurchased
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class  IapEvent
+	Field: int value__
+	Field: IapEvent STORE_REFRESH = 0
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class  Balance
+	Field: uint currency_type
+	Field: int amount
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class  PresentationData
+	Field: uint key
+	Field: uint presentationValue
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class  ItemQuantity
+	Field: uint item
+	Field: int quantity
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+Class NianticLabs.Platform CompassHeading
+	Field: double headingDeg
+	Field: double timestampS
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class NianticLabs.Platform MapApi
+	Field: LocationUpdateEventHandler LocationUpdateEvent
+	Method: ClearCache - a0777c5c
+	Method: GetView - a0777e70
+	Method: SetView - a0777ff0
+	Method: GetPosition - a0778170
+	Method: GetWorldLocation - a07783ac
+	Method: SubscribeLayer - a07785d8
+	Method: OnLocationUpdateEventHandler - a0778758
+	Method: GetCurrentLocation - a0778ac4
+	Method: UpdateTiles - a0778c44
+	Method: S2CacheUpdateVisibleCells - a0778ec0
+	Method: S2CacheSetCellData - a0779088
+	Method: CheckResult - a0777ddc
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class  LocationUpdateEventHandler
+	Method: .ctor - a0779ac0
+	Method: Invoke - a07792e8
+	Method: BeginInvoke - a0779b48
+	Method: EndInvoke - a0779c54
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+	VTable 3: ToString - a0b54704
+	VTable 4: Clone - a0b010fc
+	VTable 5: GetObjectData - a0b4b718
+	VTable 6: DynamicInvokeImpl - a0b4b738
+	VTable 7: Clone - a0b010fc
+	VTable 8: GetObjectData - a0b4b718
+	VTable 9: GetInvocationList - a0b4b8b0
+	VTable 10: CombineImpl - a0b4bba4
+	VTable 11: RemoveImpl - a0b4bfb4
+	VTable 12: Invoke - a07792e8
+	VTable 13: BeginInvoke - a0779b48
+	VTable 14: EndInvoke - a0779c54
+Class  TileEvent
+	Field: int value__
+	Field: TileEvent CREATE_TILE = 0
+	Field: TileEvent DELETE_TILE = 1
+	Field: TileEvent BEGIN_TILE = 2
+	Field: TileEvent END_TILE = 3
+	Field: TileEvent LAYER = 4
+	Field: TileEvent POINT = 5
+	Field: TileEvent LINEAR = 6
+	Field: TileEvent MESH = 7
+	Field: TileEvent GMM_BUILDING = 8
+	Field: TileEvent AREA = 9
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class  CellEvent
+	Field: int value__
+	Field: CellEvent FETCH_CELLS = 0
+	Field: CellEvent DELETED_CELLS = 1
+	Field: CellEvent ADDED_TO_SCENE_CELLS = 2
+	Field: CellEvent REMOVED_FROM_SCENE_CELLS = 3
+	Field: CellEvent UPDATED_SCENE_CELLS = 4
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class  CellEventDelegateType
+	Method: .ctor - a07794b0
+	Method: Invoke - a07794c4
+	Method: BeginInvoke - a07795c4
+	Method: EndInvoke - a07796a8
+	VTable 0: Equals - a0b4b78c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b4b8a8
+Class System.Reflection MemberFilter
+Class NianticLabs.Platform PluginState
+	Field: int value__
+	Field: PluginState UNDEFINED = 0
+	Field: PluginState INIT = 1
+	Field: PluginState START = 2
+	Field: PluginState STOP = 3
+	Field: PluginState PAUSE = 4
+	Field: PluginState RESUME = 5
+	Field: PluginState ACTIVE = 6
+	Field: PluginState IDLE = 7
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class NianticLabs.Platform PluginApi
+	Field: OnLoadHandler OnLoadEvent
+	Field: DebugLogsDelegate logDelegate
+	Field: int mainThreadId
+	Field: NativeLogDelegateType <>f__mg$cache0
+	Method: SetBackgroundMode - a07845b8
+	Method: FlushDebugLogs - a0785240
+	Method: SetLogLevel - a07844bc
+	Method: GetDeviceCountryCode - a0785424
+	Method: LogError - a0785614
+	Method: LogError - a0785804
+	Method: LogWarning - a07858a8
+	Method: LogVerbose - a0783c8c
+	Method: Log - a07856ec
+	Method: OnLoad - a0784330
+	Method: OnPause - a0784ebc
+	Method: OnResume - a0784c98
+	Method: OnStart - a07846b4
+	Method: OnStop - a07850a8
+	Method: OnUpdate - a0784ae4
+	Method: OnNativeEvent - a0783d30
+	Method: CheckResult - a07851a0
+Class NianticLabs.Platform PluginUtils
+	Method: RecoverPluginEventParams - 0
+	Method: RecoverFromHandle - 0
+	Method: RecoverArrayFromHandle - 0
+	Method: ArrayAllocator - 0
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class NianticLabs.Platform RpcException
+	Field: RpcStatus rpcStatus
+	Field: int rpcId
+	Method: .ctor - a07887f4
+	Method: get_Status - a0788958
+	Method: get_RpcId - a0788960
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b0d84c
+	VTable 4: GetObjectData - a0ab867c
+	VTable 5: get_InnerException - a0b0cb44
+	VTable 6: get_Message - a0ab84c0
+	VTable 7: get_Source - a0b0cbc0
+	VTable 8: get_StackTrace - a0b0cd84
+	VTable 9: GetObjectData - a0ab867c
+	VTable 10: GetType - a0b0dab0
+Class NianticLabs.Platform RpcData
+	Field: int rpcId
+	Field: CodedInputStream stream
+	Method: .ctor - a0787a00
+	Method: get_RpcId - a07887ec
+	Method: get_Stream - a0788950
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class Google.Protobuf CodedInputStream
+	Field: cmod_reqd buffer
+	Field: int bufferSize
+	Field: int bufferSizeAfterLimit
+	Field: int bufferPos
+	Field: Stream input
+	Field: uint lastTag
+	Field: uint nextTag
+	Field: boolean hasNextTag
+	Field: int DefaultRecursionLimit = 64
+	Field: int DefaultSizeLimit = 67108864
+	Field: int BufferSize = 4096
+	Field: int totalBytesRetired
+	Field: int currentLimit
+	Field: int recursionDepth
+	Field: int recursionLimit
+	Field: int sizeLimit
+	Method: .ctor - a0665fe4
+	Method: .ctor - a06666b4
+	Method: .ctor - a0666660
+	Method: get_LastTag - a06667b0
+	Method: CheckReadEndOfStreamTag - a06667b8
+	Method: PeekTag - a066687c
+	Method: ReadTag - a06668b8
+	Method: SkipLastField - a0666c94
+	Method: SkipGroup - a0666dd4
+	Method: ReadDouble - a0667054
+	Method: ReadFloat - a066718c
+	Method: ReadUInt64 - a0667870
+Class  Request
+	Field: int method
+	Field: IMessage payload
+	Field: RpcFuture future
+	Method: .ctor - a0786da4
+Class NianticLabs.Platform ViewPoint
+	Field: double longitudeDeg
+	Field: double latitudeDeg
+	Field: double lineOfSightM
+	Field: double tileSizeM
+	VTable 0: Equals - a0ca0a48
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0ca0a60
+	VTable 3: ToString - a0ca0b28
+Class NianticLabs.Platform SpatialCacheManager
+	Field: CellEventDelegateType cellEventDelegate
+	Field: Generic fetchCells
+	Field: Generic deletedCells
+	Field: Generic addToSceneCells
+	Field: Generic removeFromSceneCells
+	Field: Generic updatedSceneCells
+	Method: .ctor - a078a098
+	Method: CellEventCallback - a078a1b8
+	Method: SetCellData - a078a44c
+	Method: UpdateVisibleCells - a078a480
+	Method: Clear - a078a704
+	Method: .cctor - a078a714
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class Nianticlabs.Platform.Bridge BridgeReflection
+	Field: FileDescriptor descriptor
+	Method: .cctor - a0770fa0
+	Method: get_Descriptor - a0771024
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class Google.Protobuf.Reflection FileDescriptor
+	Field: FileDescriptorProto <Proto>k__BackingField
+	Field: Generic <MessageTypes>k__BackingField
+	Field: Generic <EnumTypes>k__BackingField
+	Field: Generic <Services>k__BackingField
+	Field: Generic <Dependencies>k__BackingField
+Class System.Text.RegularExpressions IMachineFactory
+	Method: NewInstance - 0
+	Method: get_Mapping - 0
+	Method: set_Mapping - 0
+	Method: get_GroupCount - 0
+	Method: get_Gap - 0
+	Method: set_Gap - 0
+	Method: get_NamesMapping - 0
+	Method: set_NamesMapping - 0
+Class System.Collections IDictionary
+	Method: get_IsReadOnly - 0
+	Method: get_Item - 0
+	Method: set_Item - 0
+	Method: get_Keys - 0
+	Method: get_Values - 0
+	Method: Add - 0
+	Method: Clear - 0
+	Method: Contains - 0
+	Method: GetEnumerator - 0
+	Method: Remove - 0
+Class System.Text.RegularExpressions IMachineFactory
+	Method: NewInstance - 0
+	Method: get_Mapping - 0
+	Method: set_Mapping - 0
+	Method: get_GroupCount - 0
+	Method: get_Gap - 0
+	Method: set_Gap - 0
+	Method: get_NamesMapping - 0
+	Method: set_NamesMapping - 0
+Class System.Collections IDictionary
+	Method: get_IsReadOnly - 0
+	Method: get_Item - 0
+	Method: set_Item - 0
+	Method: get_Keys - 0
+	Method: get_Values - 0
+	Method: Add - 0
+	Method: Clear - 0
+	Method: Contains - 0
+	Method: GetEnumerator - 0
+	Method: Remove - 0
+Class System.Text.RegularExpressions RegexOptions
+	Field: int value__
+	Field: RegexOptions None = 0
+	Field: RegexOptions IgnoreCase = 1
+	Field: RegexOptions Multiline = 2
+	Field: RegexOptions ExplicitCapture = 4
+	Field: RegexOptions Singleline = 16
+	Field: RegexOptions IgnorePatternWhitespace = 32
+	Field: RegexOptions RightToLeft = 64
+	Field: RegexOptions ECMAScript = 256
+	Field: RegexOptions CultureInvariant = 512
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
+	VTable 6: System.IConvertible.ToBoolean - a0b06270
+	VTable 7: System.IConvertible.ToByte - a0b06328
+	VTable 8: System.IConvertible.ToChar - a0b063dc
+	VTable 9: System.IConvertible.ToDateTime - a0b06490
+	VTable 10: System.IConvertible.ToDecimal - a0b06554
+	VTable 11: System.IConvertible.ToDouble - a0b06618
+	VTable 12: System.IConvertible.ToInt16 - a0b066cc
+	VTable 13: System.IConvertible.ToInt32 - a0b06780
+	VTable 14: System.IConvertible.ToInt64 - a0b06834
+	VTable 15: System.IConvertible.ToSByte - a0b068e8
+	VTable 16: System.IConvertible.ToSingle - a0b0699c
+	VTable 17: ToString - a0b0943c
+	VTable 18: System.IConvertible.ToType - a0b06a50
+	VTable 19: System.IConvertible.ToUInt16 - a0b06c04
+	VTable 20: System.IConvertible.ToUInt32 - a0b06cb8
+	VTable 21: System.IConvertible.ToUInt64 - a0b06d6c
+	VTable 22: CompareTo - a0b090e8
+Class Com.Nianticproject.Platform.Auth.Plugins.Google GoogleToken
+	Field: Generic _parser
+	Field: String idToken_
+	Method: .ctor - a076de60
+	Method: .ctor - a076df1c
+	Method: get_Descriptor - a076df44
+	Method: Google.Protobuf.IMessage.get_Descriptor - a076e0ec
+	Method: Clone - a076e184
+	Method: get_IdToken - a076e214
+	Method: set_IdToken - a076e21c
+	Method: Equals - a076e2bc
+	Method: Equals - a076e360
+	Method: GetHashCode - a076e46c
+	Method: ToString - a076e4d4
+	Method: WriteTo - a076e57c
+	Method: CalculateSize - a076e5d8
+	Method: MergeFrom - a076e6b0
+	Method: .cctor - a076e710
+	Method: <_parser>m__0 - a076e80c
+	VTable 0: Equals - a076e2bc
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a076e46c
+	VTable 3: ToString - a076e4d4
+	VTable 4: MergeFrom - a076e6b0
+	VTable 5: WriteTo - a076e57c
+	VTable 6: CalculateSize - a076e5d8
+	VTable 7: Google.Protobuf.IMessage.get_Descriptor - a076e0ec
+	VTable 8: Equals - a076e360
+	VTable 9: Clone - a076e184
+Class NianticLabs.Auth GoogleTokenSource
+	Field: String clientId
+	Field: String clientSecret
+	Method: .ctor - a076e918
+	Method: NianticLabs.Auth.ITokenSource.get_AuthenticationProviderId - a076e940
+	Method: NianticLabs.Auth.ITokenSource.GetToken - a076e9b8
+	Method: NianticLabs.Auth.ITokenSource.RefreshToken - a076eb10
+	Method: NianticLabs.Auth.ITokenSource.ClearToken - a076ec68
+	Method: CreateRequest - a076ed08
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+	VTable 4: NianticLabs.Auth.ITokenSource.get_AuthenticationProviderId - a076e940
+	VTable 5: NianticLabs.Auth.ITokenSource.GetToken - a076e9b8
+	VTable 6: NianticLabs.Auth.ITokenSource.RefreshToken - a076eb10
+	VTable 7: NianticLabs.Auth.ITokenSource.ClearToken - a076ec68
+Class <NianticLabs.Auth.ITokenSource GetToken>c__AnonStorey0
+	Field: Generic tokenCallback
+	Field: GoogleTokenSource $this
+	Method: .ctor - a076eb08
+	Method: <>m__0 - a076edac
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class <NianticLabs.Auth.ITokenSource GetToken>c__AnonStorey1
+	Field: IMessage request
+	Field: GetToken>c__AnonStorey0 <>f__ref$0
+	Method: .ctor - a076eef4
+	Method: <>m__0 - a076eefc
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class Google.Protobuf IMessage
+	Method: MergeFrom - 0
+	Method: WriteTo - 0
+	Method: CalculateSize - 0
+	Method: get_Descriptor - 0
+Class <NianticLabs.Auth.ITokenSource RefreshToken>c__AnonStorey2
+	Field: Generic tokenCallback
+	Field: GoogleTokenSource $this
+	Method: .ctor - a076ec60
+	Method: <>m__0 - a076ef98
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class <NianticLabs.Auth.ITokenSource RefreshToken>c__AnonStorey3
+	Field: IMessage request
+	Field: RefreshToken>c__AnonStorey2 <>f__ref$2
+	Method: .ctor - a076f0e0
+	Method: <>m__0 - a076f0e8
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+Class NianticLabs.Auth TokenManager
+	Field: String serverHostPort
+	Field: ITokenSource tokenSource
+	Field: boolean started
+	Field: boolean refreshingToken
+	Field: boolean tokenSourceHasStaleCachedToken
+	Field: IMessage token
+	Field: InternalState state
+	Field: AuthEventHandler AuthEvents
+	Method: .ctor - a076f184
+	Method: Finalize - a076f1b8
+	Method: add_AuthEvents - a076f220
+	Method: remove_AuthEvents - a076f3d4
+	Method: Start - a076f588
+	Method: Stop - a076ff8c
+	Method: Dispose - a076f21c
+	Method: GetTokenCallback - a077008c
+	Method: ChannelAuthEventCallback - a07700a8
+	Method: NotifyAuthEvents - a07700f4
+	Method: HandleEvent - a076f704
+	VTable 0: Equals - a0b5468c
+	VTable 1: Finalize - a076f1b8
+	VTable 2: GetHashCode - a0b546f8
+	VTable 3: ToString - a0b54704
+	VTable 4: Dispose - a076f21c
+Class  AuthEvent
+	Field: int value__
+	Field: AuthEvent UNAUTHORIZED = 0
+	Field: AuthEvent AUTHORIZATION_PENDING = 1
+	Field: AuthEvent AUTHORIZED = 2
+	VTable 0: Equals - a0b0a02c
+	VTable 1: Finalize - a0b546f4
+	VTable 2: GetHashCode - a0b0a044
+	VTable 3: ToString - a0b09258
+	VTable 4: ToString - a0b09ecc
+	VTable 5: GetTypeCode - a0b06e20
