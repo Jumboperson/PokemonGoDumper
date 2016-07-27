@@ -348,7 +348,8 @@ void* main_thread(void * arg)
 				__android_log_print(ANDROID_LOG_INFO, TAG, "System.Reflection.Assembly::%s = %x, %d", vid.methodInfo->name, vid.methodInfo->method, x);
 			}
 		}*/
-		for (int i = 5; i < pArray->max_length; ++i)
+		
+		for (int i = 4; i < pArray->max_length; ++i)
 		{
 			memset(pDumpedClasses, 0, sizeof(pDumpedClasses));
 			uiDumpedIndex = 0;
@@ -357,10 +358,7 @@ void* main_thread(void * arg)
 			//	continue;
 
 			Assembly_t* pAsm = *(Assembly_t**)((int*)(pArray + 1) + i);
-			//if (i < 15 && i != 5 && i != 6 && i != 7)
-			//	continue;
-			//for (int x = 0; x < 10; ++x)
-			//{
+
 			VirtualInvokeData vid = g_GetVirt(3, pAsm);
 			String_t* pName = vid.methodInfo->method(vid.target, (void*)vid.methodInfo);
 

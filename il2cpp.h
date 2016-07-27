@@ -20,7 +20,8 @@ typedef struct
 	Type_t arr[2];
 } TypeArray;
 
-typedef enum {
+typedef enum 
+{
 	IL2CPP_TYPE_END = 0x00,       /* End of List */
 	IL2CPP_TYPE_VOID = 0x01,
 	IL2CPP_TYPE_BOOLEAN = 0x02,
