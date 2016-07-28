@@ -1,0 +1,1788 @@
+JNI_OnLoad
+Injector Called
+g_GetMonoDomain a0e77f44
+g_OpenAssembly a0e77f48
+g_GetAssemblyImage a0e77930
+g_GetClassFromName a0e77954
+g_ClassMethodFromName a0e7797c
+g_InvokeRuntime a0e781ec
+g_GetAssemblies a0e79798
+g_GetCurrDomain a0e7971c
+g_GetVirt a0ebecf4
+g_GetTypeName a0e807a0
+g_GetAssemblyTypes a0e8af10
+GC_free a0edcdcc
+g_GetImageFromIndex a0eb1ebc
+g_GetClassFromIndex a0eb1ef4
+g_SetupClass a0ea6148
+g_GetFieldDefault a0eabd5c
+AppDomain ab23afa0
+Number of assemblies: 18
+Assembly 16: Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=, PublicKeyToken=null
+	Contains 73 classes
+=================Beginning class dump==============================
+Class UnityStandardAssets.ImageEffects BlendToColor
+	Field: Color color
+	Field: float blend
+	Field: Shader blendToColorShader
+	Field: Material blendToColorMaterial
+	Method: void .ctor() - 9ffd1260
+	Method: boolean CheckResources() - 9ffd12d0
+	Method: Material get_material() - 9ffd1850
+	Method: void OnRenderImage(Void destination) - 9ffd1924
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffd12d0
+Class Niantic.Holoholo.ImageEffects MaskedScreenGrayscale
+	Field: Texture textureRamp
+	Field: Texture mask
+	Field: boolean flipMaskHorizontal
+	Field: float maskOffValue
+	Field: float maskOnValue
+	Field: float rampOffset
+	Method: void .ctor() - 9ffd04a4
+	Method: void OnRenderImage(Void destination) - 9ffd04b4
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: void Start() - 9ffe29c4
+	VTable 5: void OnDisable() - 9ffe2a30
+Class UnityStandardAssets.ImageEffects VerticalWipeFromBlack
+	Field: float wipe
+	Field: float feather
+	Field: Shader verticalWipeFromBlackShader
+	Field: Material verticalWipeFromBlackMaterial
+	Method: void .ctor() - 9ffeab1c
+	Method: boolean CheckResources() - 9ffeab30
+	Method: Material get_material() - 9ffeab7c
+	Method: void OnRenderImage(Void destination) - 9ffeac50
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffeab30
+Class UnityStandardAssets.ImageEffects AAMode
+	Field: int value__
+	Field: AAMode FXAA2 = 0
+	Field: AAMode FXAA3Console = 1
+	Field: AAMode FXAA1PresetA = 2
+	Field: AAMode FXAA1PresetB = 3
+	Field: AAMode NFAA = 4
+	Field: AAMode SSAA = 5
+	Field: AAMode DLAA = 6
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects Antialiasing
+	Field: AAMode mode
+	Field: boolean showGeneratedNormals
+	Field: float offsetScale
+	Field: float blurRadius
+	Field: float edgeThresholdMin
+	Field: float edgeThreshold
+	Field: float edgeSharpness
+	Field: boolean dlaaSharp
+	Field: Shader ssaaShader
+	Field: Material ssaa
+	Field: Shader dlaaShader
+	Field: Material dlaa
+	Field: Shader nfaaShader
+	Field: Material nfaa
+	Field: Shader shaderFXAAPreset2
+	Field: Material materialFXAAPreset2
+	Field: Shader shaderFXAAPreset3
+	Field: Material materialFXAAPreset3
+	Field: Shader shaderFXAAII
+	Field: Material materialFXAAII
+	Field: Shader shaderFXAAIII
+	Field: Material materialFXAAIII
+	Method: void .ctor() - 9ffd0730
+	Method: Material CurrentAAMaterial() - 9ffd0794
+	Method: boolean CheckResources() - 9ffd080c
+	Method: void OnRenderImage(Void destination) - 9ffd0e20
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffd080c
+Class UnityStandardAssets.ImageEffects Bloom
+	Field: TweakMode tweakMode
+	Field: BloomScreenBlendMode screenBlendMode
+	Field: HDRBloomMode hdr
+	Field: boolean doHdr
+	Field: float sepBlurSpread
+	Field: BloomQuality quality
+	Field: float bloomIntensity
+	Field: float bloomThreshold
+	Field: Color bloomThresholdColor
+	Field: int bloomBlurIterations
+	Field: int hollywoodFlareBlurIterations
+	Field: float flareRotation
+	Field: LensFlareStyle lensflareMode
+	Field: float hollyStretchWidth
+	Field: float lensflareIntensity
+	Field: float lensflareThreshold
+	Field: float lensFlareSaturation
+	Field: Color flareColorA
+	Field: Color flareColorB
+	Field: Color flareColorC
+	Field: Color flareColorD
+	Field: Texture2D lensFlareVignetteMask
+	Field: Shader lensFlareShader
+	Field: Material lensFlareMaterial
+	Field: Shader screenBlendShader
+	Field: Material screenBlend
+	Field: Shader blurAndFlaresShader
+	Field: Material blurAndFlaresMaterial
+	Field: Shader brightPassFilterShader
+	Field: Material brightPassFilterMaterial
+	Method: void .ctor() - 9ffd1a68
+	Method: boolean CheckResources() - 9ffd1bec
+	Method: void OnRenderImage(Void destination) - 9ffd1c74
+	Method: void AddTo(Void to) - 9ffd3408
+	Method: void BlendFlares(Void to) - 9ffd3120
+	Method: void BrightFilter(Void to) - 9ffd2e5c
+	Method: void BrightFilter(Void to) - 9ffd2d60
+	Method: void Vignette(Void to) - 9ffd2f74
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffd1bec
+Class  TweakMode
+	Field: int value__
+	Field: TweakMode Basic = 0
+	Field: TweakMode Complex = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  BloomScreenBlendMode
+	Field: int value__
+	Field: BloomScreenBlendMode Screen = 0
+	Field: BloomScreenBlendMode Add = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  HDRBloomMode
+	Field: int value__
+	Field: HDRBloomMode Auto = 0
+	Field: HDRBloomMode On = 1
+	Field: HDRBloomMode Off = 2
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  BloomQuality
+	Field: int value__
+	Field: BloomQuality Cheap = 0
+	Field: BloomQuality High = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  LensFlareStyle
+	Field: int value__
+	Field: LensFlareStyle Ghosting = 0
+	Field: LensFlareStyle Anamorphic = 1
+	Field: LensFlareStyle Combined = 2
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects LensflareStyle34
+	Field: int value__
+	Field: LensflareStyle34 Ghosting = 0
+	Field: LensflareStyle34 Anamorphic = 1
+	Field: LensflareStyle34 Combined = 2
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects TweakMode34
+	Field: int value__
+	Field: TweakMode34 Basic = 0
+	Field: TweakMode34 Complex = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects HDRBloomMode
+	Field: int value__
+	Field: HDRBloomMode Auto = 0
+	Field: HDRBloomMode On = 1
+	Field: HDRBloomMode Off = 2
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects BloomScreenBlendMode
+	Field: int value__
+	Field: BloomScreenBlendMode Screen = 0
+	Field: BloomScreenBlendMode Add = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects BloomAndFlares
+	Field: TweakMode34 tweakMode
+	Field: BloomScreenBlendMode screenBlendMode
+	Field: HDRBloomMode hdr
+	Field: boolean doHdr
+	Field: float sepBlurSpread
+	Field: float useSrcAlphaAsMask
+	Field: float bloomIntensity
+	Field: float bloomThreshold
+	Field: int bloomBlurIterations
+	Field: boolean lensflares
+	Field: int hollywoodFlareBlurIterations
+	Field: LensflareStyle34 lensflareMode
+	Field: float hollyStretchWidth
+	Field: float lensflareIntensity
+	Field: float lensflareThreshold
+	Field: Color flareColorA
+	Field: Color flareColorB
+	Field: Color flareColorC
+	Field: Color flareColorD
+	Field: Texture2D lensFlareVignetteMask
+	Field: Shader lensFlareShader
+	Field: Material lensFlareMaterial
+	Field: Shader vignetteShader
+	Field: Material vignetteMaterial
+	Field: Shader separableBlurShader
+	Field: Material separableBlurMaterial
+	Field: Shader addBrightStuffOneOneShader
+	Field: Material addBrightStuffBlendOneOneMaterial
+	Field: Shader screenBlendShader
+	Field: Material screenBlend
+	Field: Shader hollywoodFlaresShader
+	Field: Material hollywoodFlaresMaterial
+	Field: Shader brightPassFilterShader
+	Field: Material brightPassFilterMaterial
+	Method: void .ctor() - 9ffd34e8
+	Method: boolean CheckResources() - 9ffd3654
+	Method: void OnRenderImage(Void destination) - 9ffd3718
+	Method: void AddTo(Void to) - 9ffd49f8
+	Method: void BlendFlares(Void to) - 9ffd4708
+	Method: void BrightFilter(Void to) - 9ffd4434
+	Method: void Vignette(Void to) - 9ffd45cc
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffd3654
+Class UnityStandardAssets.ImageEffects BloomOptimized
+	Field: float threshold
+	Field: float intensity
+	Field: float blurSize
+	Field: Resolution resolution
+	Field: int blurIterations
+	Field: BlurType blurType
+	Field: Shader fastBloomShader
+	Field: Material fastBloomMaterial
+	Method: void .ctor() - 9ffd4ac0
+	Method: boolean CheckResources() - 9ffd4af0
+	Method: void OnDisable() - 9ffd4b3c
+	Method: void OnRenderImage(Void destination) - 9ffd4b74
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffd4af0
+Class  Resolution
+	Field: int value__
+	Field: Resolution Low = 0
+	Field: Resolution High = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  BlurType
+	Field: int value__
+	Field: BlurType Standard = 0
+	Field: BlurType Sgx = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects Blur
+	Field: int iterations
+	Field: float blurSpread
+	Field: Shader blurShader
+	Field: Material m_Material
+	Method: void .ctor() - 9ffd4fd0
+	Method: void .cctor() - 9ffd4fec
+	Method: Material get_material() - 9ffd4ff0
+	Method: void OnDisable() - 9ffd51b0
+	Method: void Start() - 9ffd52cc
+	Method: void FourTapCone(int iteration) - 9ffd534c
+	Method: void DownSample4x(Void dest) - 9ffd5564
+	Method: void OnRenderImage(Void destination) - 9ffd5750
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+Class UnityStandardAssets.ImageEffects BlurOptimized
+	Field: int downsample
+	Field: float blurSize
+	Field: int blurIterations
+	Field: BlurType blurType
+	Field: Shader blurShader
+	Field: Material blurMaterial
+	Method: void .ctor() - 9ffd5870
+	Method: boolean SupportedDevice() - 9ffd5898
+	Method: boolean CheckResources() - 9ffd5934
+	Method: void OnDisable() - 9ffd5990
+	Method: void OnRenderImage(Void destination) - 9ffd59c8
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffd5934
+Class  BlurType
+	Field: int value__
+	Field: BlurType StandardGauss = 0
+	Field: BlurType SgxGauss = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects CameraMotionBlur
+	Field: float MAX_RADIUS
+	Field: MotionBlurFilter filterType
+	Field: boolean preview
+	Field: Vector3 previewScale
+	Field: float movementScale
+	Field: float rotationScale
+	Field: float maxVelocity
+	Field: float minVelocity
+	Field: float velocityScale
+	Field: float softZDistance
+	Field: int velocityDownsample
+	Field: LayerMask excludeLayers
+	Field: GameObject tmpCam
+	Field: Shader shader
+	Field: Shader dx11MotionBlurShader
+	Field: Shader replacementClear
+	Field: Material motionBlurMaterial
+	Field: Material dx11MotionBlurMaterial
+	Field: Texture2D noiseTexture
+	Field: float jitter
+	Field: boolean showVelocity
+	Field: float showVelocityScale
+	Field: Matrix4x4 currentViewProjMat
+	Field: Matrix4x4 prevViewProjMat
+	Field: int prevFrameCount
+	Field: boolean wasActive
+	Field: Vector3 prevFrameForward
+	Field: Vector3 prevFrameUp
+	Field: Vector3 prevFramePos
+	Field: Camera _camera
+	Method: void .ctor() - 9ffd5de8
+	Method: void .cctor() - 9ffd5ee8
+	Method: void CalculateViewProjection() - 9ffd5f70
+	Method: void Start() - 9ffd6260
+	Method: void OnEnable() - 9ffd645c
+	Method: void OnDisable() - 9ffd6534
+	Method: boolean CheckResources() - 9ffd65e0
+	Method: void OnRenderImage(Void destination) - 9ffd66b0
+	Method: void Remember() - 9ffd6364
+	Method: Camera GetTmpCam() - 9ffd8980
+	Method: void StartFrame() - 9ffd88f0
+	Method: int divRoundUp(int d) - 9ffd8970
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffd65e0
+Class  MotionBlurFilter
+	Field: int value__
+	Field: MotionBlurFilter CameraMotion = 0
+	Field: MotionBlurFilter LocalBlur = 1
+	Field: MotionBlurFilter Reconstruction = 2
+	Field: MotionBlurFilter ReconstructionDX11 = 3
+	Field: MotionBlurFilter ReconstructionDisc = 4
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects ColorCorrectionCurves
+	Field: AnimationCurve redChannel
+	Field: AnimationCurve greenChannel
+	Field: AnimationCurve blueChannel
+	Field: boolean useDepthCorrection
+	Field: AnimationCurve zCurve
+	Field: AnimationCurve depthRedChannel
+	Field: AnimationCurve depthGreenChannel
+	Field: AnimationCurve depthBlueChannel
+	Field: Material ccMaterial
+	Field: Material ccDepthMaterial
+	Field: Material selectiveCcMaterial
+	Field: Texture2D rgbChannelTex
+	Field: Texture2D rgbDepthChannelTex
+	Field: Texture2D zCurveTex
+	Field: float saturation
+	Field: boolean selectiveCc
+	Field: Color selectiveFromColor
+	Field: Color selectiveToColor
+	Field: ColorCorrectionMode mode
+	Field: boolean updateTextures
+	Field: Shader colorCorrectionCurvesShader
+	Field: Shader simpleColorCorrectionCurvesShader
+	Field: Shader colorCorrectionSelectiveShader
+	Field: boolean updateTexturesOnStartup
+	Method: void .ctor() - 9ffd8e34
+	Method: void Start() - 9ffd94c8
+	Method: void Awake() - 9ffd9534
+	Method: boolean CheckResources() - 9ffd9538
+	Method: void UpdateParameters() - 9ffd97d4
+	Method: void UpdateTextures() - 9ffd9cd4
+	Method: void OnRenderImage(Void destination) - 9ffd9cd8
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffd9538
+Class  ColorCorrectionMode
+	Field: int value__
+	Field: ColorCorrectionMode Simple = 0
+	Field: ColorCorrectionMode Advanced = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects ColorCorrectionLookup
+	Field: Shader shader
+	Field: Material material
+	Field: Texture3D converted3DLut
+	Field: String basedOnTempTex
+	Method: void .ctor() - 9ffda064
+	Method: boolean CheckResources() - 9ffda134
+	Method: void OnDisable() - 9ffda18c
+	Method: void OnDestroy() - 9ffda1cc
+	Method: void SetIdentityLut() - 9ffda20c
+	Method: boolean ValidDimensions(Boolean tex2d) - 9ffda4ac
+	Method: void Convert(String path) - 9ffda5f8
+	Method: void OnRenderImage(Void destination) - 9ffdaa90
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffda134
+Class UnityStandardAssets.ImageEffects ColorCorrectionRamp
+	Field: Texture textureRamp
+	Method: void .ctor() - 9ffdacb8
+	Method: void OnRenderImage(Void destination) - 9ffdacc0
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: void Start() - 9ffe29c4
+	VTable 5: void OnDisable() - 9ffe2a30
+Class UnityStandardAssets.ImageEffects ContrastEnhance
+	Field: float intensity
+	Field: float threshold
+	Field: Material separableBlurMaterial
+	Field: Material contrastCompositeMaterial
+	Field: float blurSpread
+	Field: Shader separableBlurShader
+	Field: Shader contrastCompositeShader
+	Method: void .ctor() - 9ffdad90
+	Method: boolean CheckResources() - 9ffdadb4
+	Method: void OnRenderImage(Void destination) - 9ffdae14
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffdadb4
+Class UnityStandardAssets.ImageEffects ContrastStretch
+	Field: float adaptationSpeed
+	Field: float limitMinimum
+	Field: float limitMaximum
+	Field: cmod_reqd adaptRenderTex
+	Field: int curAdaptIndex
+	Field: Shader shaderLum
+	Field: Material m_materialLum
+	Field: Shader shaderReduce
+	Field: Material m_materialReduce
+	Field: Shader shaderAdapt
+	Field: Material m_materialAdapt
+	Field: Shader shaderApply
+	Field: Material m_materialApply
+	Method: void .ctor() - 9ffdb200
+	Method: Material get_materialLum() - 9ffdb2c0
+	Method: Material get_materialReduce() - 9ffdb394
+	Method: Material get_materialAdapt() - 9ffdb468
+	Method: Material get_materialApply() - 9ffdb53c
+	Method: void Start() - 9ffdb610
+	Method: void OnEnable() - 9ffdb6b8
+	Method: void OnDisable() - 9ffdb838
+	Method: void OnRenderImage(Void destination) - 9ffdb960
+	Method: void CalculateAdaptation(Void curTexture) - 9ffdbb94
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+Class UnityStandardAssets.ImageEffects CreaseShading
+	Field: float intensity
+	Field: int softness
+	Field: float spread
+	Field: Shader blurShader
+	Field: Material blurMaterial
+	Field: Shader depthFetchShader
+	Field: Material depthFetchMaterial
+	Field: Shader creaseApplyShader
+	Field: Material creaseApplyMaterial
+	Method: void .ctor() - 9ffdbe40
+	Method: boolean CheckResources() - 9ffdbe64
+	Method: void OnRenderImage(Void destination) - 9ffdbed8
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffdbe64
+Class UnityStandardAssets.ImageEffects DepthOfField
+	Field: boolean visualizeFocus
+	Field: float focalLength
+	Field: float focalSize
+	Field: float aperture
+	Field: Transform focalTransform
+	Field: float maxBlurSize
+	Field: boolean highResolution
+	Field: BlurType blurType
+	Field: BlurSampleCount blurSampleCount
+	Field: boolean nearBlur
+	Field: float foregroundOverlap
+	Field: Shader dofHdrShader
+	Field: Material dofHdrMaterial
+	Field: Shader dx11BokehShader
+	Field: Material dx11bokehMaterial
+	Field: float dx11BokehThreshold
+	Field: float dx11SpawnHeuristic
+	Field: Texture2D dx11BokehTexture
+	Field: float dx11BokehScale
+	Field: float dx11BokehIntensity
+	Field: float focalDistance01
+	Field: ComputeBuffer cbDrawArgs
+	Field: ComputeBuffer cbPoints
+	Field: float internalBlurWidth
+	Method: void .ctor() - 9ffdc31c
+	Method: boolean CheckResources() - 9ffdc3a0
+	Method: void OnEnable() - 9ffdc5e0
+	Method: void OnDisable() - 9ffdc690
+	Method: void ReleaseComputeResources() - 9ffdc704
+	Method: void CreateComputeResources() - 9ffdc420
+	Method: float FocalDistance01(float worldDist) - 9ffdc748
+	Method: void WriteCoc(boolean fgDilate) - 9ffdc990
+	Method: void OnRenderImage(Void destination) - 9ffdcd08
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffdc3a0
+Class  BlurType
+	Field: int value__
+	Field: BlurType DiscBlur = 0
+	Field: BlurType DX11 = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  BlurSampleCount
+	Field: int value__
+	Field: BlurSampleCount Low = 0
+	Field: BlurSampleCount Medium = 1
+	Field: BlurSampleCount High = 2
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects DepthOfFieldDeprecated
+	Field: int SMOOTH_DOWNSAMPLE_PASS
+	Field: float BOKEH_EXTRA_BLUR
+	Field: Dof34QualitySetting quality
+	Field: DofResolution resolution
+	Field: boolean simpleTweakMode
+	Field: float focalPoint
+	Field: float smoothness
+	Field: float focalZDistance
+	Field: float focalZStartCurve
+	Field: float focalZEndCurve
+	Field: float focalStartCurve
+	Field: float focalEndCurve
+	Field: float focalDistance01
+	Field: Transform objectFocus
+	Field: float focalSize
+	Field: DofBlurriness bluriness
+	Field: float maxBlurSpread
+	Field: float foregroundBlurExtrude
+	Field: Shader dofBlurShader
+	Field: Material dofBlurMaterial
+	Field: Shader dofShader
+	Field: Material dofMaterial
+	Field: boolean visualize
+	Field: BokehDestination bokehDestination
+	Field: float widthOverHeight
+	Field: float oneOverBaseSize
+	Field: boolean bokeh
+	Field: boolean bokehSupport
+	Field: Shader bokehShader
+	Field: Texture2D bokehTexture
+	Field: float bokehScale
+	Field: float bokehIntensity
+	Field: float bokehThresholdContrast
+	Field: float bokehThresholdLuminance
+	Field: int bokehDownsample
+	Field: Material bokehMaterial
+	Field: Camera _camera
+	Field: RenderTexture foregroundTexture
+	Field: RenderTexture mediumRezWorkTexture
+	Field: RenderTexture finalDefocus
+	Field: RenderTexture lowRezWorkTexture
+	Field: RenderTexture bokehSource
+	Field: RenderTexture bokehSource2
+	Method: void .ctor() - 9ffde734
+	Method: void .cctor() - 9ffde7f4
+	Method: void CreateMaterials() - 9ffde888
+	Method: boolean CheckResources() - 9ffde918
+	Method: void OnDisable() - 9ffde9d4
+	Method: void OnEnable() - 9ffded34
+	Method: float FocalDistance01(float worldDist) - 9ffdede8
+	Method: int GetDividerBasedOnQuality() - 9ffdef48
+	Method: int GetLowResolutionDividerBasedOnQuality(int baseDivider) - 9ffdef68
+	Method: void OnRenderImage(Void destination) - 9ffdef90
+	Method: void Blur(float spread) - 9ffdff68
+	Method: void BlurFg(float spread) - 9ffe07f0
+	Method: void BlurHex(Void tmp) - 9ffe0c90
+	Method: void Downsample(Void to) - 9ffdfdd0
+	Method: void AddBokeh(Void finalTarget) - 9ffe02d0
+	Method: void ReleaseTextures() - 9ffe0b90
+	Method: void AllocateTextures(int lowTexDivider) - 9ffdfa50
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffde918
+Class  Dof34QualitySetting
+	Field: int value__
+	Field: Dof34QualitySetting OnlyBackground = 1
+	Field: Dof34QualitySetting BackgroundAndForeground = 2
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  DofResolution
+	Field: int value__
+	Field: DofResolution High = 2
+	Field: DofResolution Medium = 3
+	Field: DofResolution Low = 4
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  DofBlurriness
+	Field: int value__
+	Field: DofBlurriness Low = 1
+	Field: DofBlurriness High = 2
+	Field: DofBlurriness VeryHigh = 4
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  BokehDestination
+	Field: int value__
+	Field: BokehDestination Background = 1
+	Field: BokehDestination Foreground = 2
+	Field: BokehDestination BackgroundAndForeground = 3
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects EdgeDetection
+	Field: EdgeDetectMode mode
+	Field: float sensitivityDepth
+	Field: float sensitivityNormals
+	Field: float lumThreshold
+	Field: float edgeExp
+	Field: float sampleDist
+	Field: float edgesOnly
+	Field: Color edgesOnlyBgColor
+	Field: Shader edgeDetectShader
+	Field: Material edgeDetectMaterial
+	Field: EdgeDetectMode oldMode
+	Method: void .ctor() - 9ffe1318
+	Method: boolean CheckResources() - 9ffe1398
+	Method: void Start() - 9ffe150c
+	Method: void SetCameraFlag() - 9ffe1404
+	Method: void OnEnable() - 9ffe1518
+	Method: void OnRenderImage(Void destination) - 9ffe151c
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffe1398
+Class  EdgeDetectMode
+	Field: int value__
+	Field: EdgeDetectMode TriangleDepthNormals = 0
+	Field: EdgeDetectMode RobertsCrossDepthNormals = 1
+	Field: EdgeDetectMode SobelDepth = 2
+	Field: EdgeDetectMode SobelDepthThin = 3
+	Field: EdgeDetectMode TriangleLuminance = 4
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects Fisheye
+	Field: float strengthX
+	Field: float strengthY
+	Field: Shader fishEyeShader
+	Field: Material fisheyeMaterial
+	Method: void .ctor() - 9ffe17bc
+	Method: boolean CheckResources() - 9ffe17e0
+	Method: void OnRenderImage(Void destination) - 9ffe182c
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffe17e0
+Class UnityStandardAssets.ImageEffects GlobalFog
+	Field: boolean distanceFog
+	Field: boolean useRadialDistance
+	Field: boolean heightFog
+	Field: float height
+	Field: float heightDensity
+	Field: float startDistance
+	Field: Shader fogShader
+	Field: Material fogMaterial
+	Method: void .ctor() - 9ffe19ac
+	Method: boolean CheckResources() - 9ffe19d8
+	Method: void OnRenderImage(Void destination) - 9ffe1a24
+	Method: void CustomGraphicsBlit(int passNr) - 9ffe26e0
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffe19d8
+Class UnityStandardAssets.ImageEffects Grayscale
+	Field: Texture textureRamp
+	Field: float rampOffset
+	Method: void .ctor() - 9ffe28b4
+	Method: void OnRenderImage(Void destination) - 9ffe28bc
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: void Start() - 9ffe29c4
+	VTable 5: void OnDisable() - 9ffe2a30
+Class UnityStandardAssets.ImageEffects ImageEffectBase
+	Field: Shader shader
+	Field: Material m_Material
+	Method: void .ctor() - 9ffd04ac
+	Method: void Start() - 9ffe29c4
+	Method: Material get_material() - 9ffd065c
+	Method: void OnDisable() - 9ffe2a30
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: void Start() - 9ffe29c4
+	VTable 5: void OnDisable() - 9ffe2a30
+Class UnityStandardAssets.ImageEffects ImageEffects
+	Method: void .ctor() - 9ffe2a68
+	Method: void RenderDistortion(Void radius) - 9ffe2a70
+	Method: void Blit(Void dest) - 9ffe2d50
+	Method: void BlitWithMaterial(Void dest) - 9ffe2d5c
+	VTable 0: boolean Equals(mvar obj) - a0b5168c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b516f8
+	VTable 3: String ToString() - a0b51704
+Class UnityStandardAssets.ImageEffects MotionBlur
+	Field: float blurAmount
+	Field: boolean extraBlur
+	Field: RenderTexture accumTexture
+	Method: void .ctor() - 9ffe2d90
+	Method: void Start() - 9ffe2da4
+	Method: void OnDisable() - 9ffe2de4
+	Method: void OnRenderImage(Void destination) - 9ffe2e08
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: void Start() - 9ffe2da4
+	VTable 5: void OnDisable() - 9ffe2de4
+Class UnityStandardAssets.ImageEffects NoiseAndGrain
+	Field: float intensityMultiplier
+	Field: float generalIntensity
+	Field: float blackIntensity
+	Field: float whiteIntensity
+	Field: float midGrey
+	Field: boolean dx11Grain
+	Field: float softness
+	Field: boolean monochrome
+	Field: Vector3 intensities
+	Field: Vector3 tiling
+	Field: float monochromeTiling
+	Field: FilterMode filterMode
+	Field: Texture2D noiseTexture
+	Field: Shader noiseShader
+	Field: Material noiseMaterial
+	Field: Shader dx11NoiseShader
+	Field: Material dx11NoiseMaterial
+	Field: float TILE_AMOUNT
+	Method: void .ctor() - 9ffe317c
+	Method: void .cctor() - 9ffe3248
+	Method: boolean CheckResources() - 9ffe32d0
+	Method: void OnRenderImage(Void destination) - 9ffe3344
+	Method: void DrawNoiseQuadGrid(int passNr) - 9ffe3e40
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffe32d0
+Class UnityStandardAssets.ImageEffects NoiseAndScratches
+	Field: boolean monochrome
+	Field: boolean rgbFallback
+	Field: float grainIntensityMin
+	Field: float grainIntensityMax
+	Field: float grainSize
+	Field: float scratchIntensityMin
+	Field: float scratchIntensityMax
+	Field: float scratchFPS
+	Field: float scratchJitter
+	Field: Texture grainTexture
+	Field: Texture scratchTexture
+	Field: Shader shaderRGB
+	Field: Shader shaderYUV
+	Field: Material m_MaterialRGB
+	Field: Material m_MaterialYUV
+	Field: float scratchTimeLeft
+	Field: float scratchX
+	Field: float scratchY
+	Method: void .ctor() - 9ffe42b4
+	Method: void Start() - 9ffe430c
+	Method: Material get_material() - 9ffe446c
+	Method: void OnDisable() - 9ffe45d8
+	Method: void SanitizeParameters() - 9ffe4638
+	Method: void OnRenderImage(Void destination) - 9ffe47c0
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+Class UnityStandardAssets.ImageEffects PostEffectsBase
+	Field: boolean supportHDRTextures
+	Field: boolean supportDX11
+	Field: boolean isSupported
+	Method: void .ctor() - 9ffd0780
+	Method: Material CheckShaderAndCreateMaterial(Material m2Create) - 9ffd131c
+	Method: Material CreateMaterial(Material m2Create) - 9ffd0a70
+	Method: void OnEnable() - 9ffe4c24
+	Method: boolean CheckSupport() - 9ffe4c30
+	Method: boolean CheckResources() - 9ffe4c38
+	Method: void Start() - 9ffd9504
+	Method: boolean CheckSupport(boolean needDepth) - 9ffd0900
+	Method: boolean CheckSupport(boolean needHdr) - 9ffd665c
+	Method: boolean Dx11Support() - 9ffe4d80
+	Method: void ReportAutoDisable() - 9ffd0cdc
+	Method: boolean CheckShader(Boolean s) - 9ffe4d88
+	Method: void NotSupported() - 9ffd0cb8
+	Method: void DrawBorder(Void material) - 9ffe5104
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffe4c38
+Class UnityStandardAssets.ImageEffects PostEffectsHelper
+	Method: void .ctor() - 9ffe5520
+	Method: void OnRenderImage(Void destination) - 9ffe5528
+	Method: void DrawLowLevelPlaneAlignedWithCamera(Void cameraForProjectionMatrix) - 9ffe55e4
+	Method: void DrawBorder(Void material) - 9ffe5974
+	Method: void DrawLowLevelQuad(Void material) - 9ffe5d90
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+Class UnityStandardAssets.ImageEffects Quads
+	Field: cmod_reqd meshes
+	Field: int currentQuads
+	Method: void .ctor() - 9ffe5fc4
+	Method: void .cctor() - 9ffe5fcc
+	Method: boolean HasMeshes() - 9ffe5fd0
+	Method: void Cleanup() - 9ffdea6c
+	Method: cmod_reqd GetMeshes(int totalHeight) - 9ffe0f68
+	Method: Mesh GetMesh(int totalHeight) - 9ffe6120
+	VTable 0: boolean Equals(mvar obj) - a0b5168c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b516f8
+	VTable 3: String ToString() - a0b51704
+Class UnityStandardAssets.ImageEffects ScreenOverlay
+	Field: OverlayBlendMode blendMode
+	Field: float intensity
+	Field: Texture2D texture
+	Field: Shader overlayShader
+	Field: Material overlayMaterial
+	Method: void .ctor() - 9ffe6800
+	Method: boolean CheckResources() - 9ffe6824
+	Method: void OnRenderImage(Void destination) - 9ffe6870
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffe6824
+Class  OverlayBlendMode
+	Field: int value__
+	Field: OverlayBlendMode Additive = 0
+	Field: OverlayBlendMode ScreenBlend = 1
+	Field: OverlayBlendMode Multiply = 2
+	Field: OverlayBlendMode Overlay = 3
+	Field: OverlayBlendMode AlphaBlend = 4
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects ScreenSpaceAmbientObscurance
+	Field: float intensity
+	Field: float radius
+	Field: int blurIterations
+	Field: float blurFilterDistance
+	Field: int downsample
+	Field: Texture2D rand
+	Field: Shader aoShader
+	Field: Material aoMaterial
+	Method: void .ctor() - 9ffe6a10
+	Method: boolean CheckResources() - 9ffe6a48
+	Method: void OnDisable() - 9ffe6a94
+	Method: void OnRenderImage(Void destination) - 9ffe6ad4
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffe6a48
+Class UnityStandardAssets.ImageEffects ScreenSpaceAmbientOcclusion
+	Field: float m_Radius
+	Field: SSAOSamples m_SampleCount
+	Field: float m_OcclusionIntensity
+	Field: int m_Blur
+	Field: int m_Downsampling
+	Field: float m_OcclusionAttenuation
+	Field: float m_MinZ
+	Field: Shader m_SSAOShader
+	Field: Material m_SSAOMaterial
+	Field: Texture2D m_RandomTexture
+	Field: boolean m_Supported
+	Method: void .ctor() - 9ffe72d4
+	Method: Material CreateMaterial(Material shader) - 9ffe7320
+	Method: void DestroyMaterial(Void mat) - 9ffe73ec
+	Method: void OnDisable() - 9ffe7420
+	Method: void Start() - 9ffe7428
+	Method: void OnEnable() - 9ffe75a0
+	Method: void CreateMaterials() - 9ffe74c8
+	Method: void OnRenderImage(Void destination) - 9ffe7650
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+Class  SSAOSamples
+	Field: int value__
+	Field: SSAOSamples Low = 0
+	Field: SSAOSamples Medium = 1
+	Field: SSAOSamples High = 2
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects SepiaTone
+	Method: void .ctor() - 9ffe7e68
+	Method: void OnRenderImage(Void destination) - 9ffe7e70
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: void Start() - 9ffe29c4
+	VTable 5: void OnDisable() - 9ffe2a30
+Class UnityStandardAssets.ImageEffects SunShafts
+	Field: SunShaftsResolution resolution
+	Field: ShaftsScreenBlendMode screenBlendMode
+	Field: Transform sunTransform
+	Field: int radialBlurIterations
+	Field: Color sunColor
+	Field: Color sunThreshold
+	Field: float sunShaftBlurRadius
+	Field: float sunShaftIntensity
+	Field: float maxRadius
+	Field: boolean useDepthTexture
+	Field: Shader sunShaftsShader
+	Field: Material sunShaftsMaterial
+	Field: Shader simpleClearShader
+	Field: Material simpleClearMaterial
+	Method: void .ctor() - 9ffe7eac
+	Method: boolean CheckResources() - 9ffe7f6c
+	Method: void OnRenderImage(Void destination) - 9ffe7fcc
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffe7f6c
+Class  SunShaftsResolution
+	Field: int value__
+	Field: SunShaftsResolution Low = 0
+	Field: SunShaftsResolution Normal = 1
+	Field: SunShaftsResolution High = 2
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  ShaftsScreenBlendMode
+	Field: int value__
+	Field: ShaftsScreenBlendMode Screen = 0
+	Field: ShaftsScreenBlendMode Add = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects TiltShift
+	Field: TiltShiftMode mode
+	Field: TiltShiftQuality quality
+	Field: float blurArea
+	Field: float maxBlurSize
+	Field: int downsample
+	Field: Shader tiltShiftShader
+	Field: Material tiltShiftMaterial
+	Method: void .ctor() - 9ffe89f4
+	Method: boolean CheckResources() - 9ffe8a1c
+	Method: void OnRenderImage(Void destination) - 9ffe8a68
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffe8a1c
+Class  TiltShiftMode
+	Field: int value__
+	Field: TiltShiftMode TiltShiftMode = 0
+	Field: TiltShiftMode IrisMode = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  TiltShiftQuality
+	Field: int value__
+	Field: TiltShiftQuality Preview = 0
+	Field: TiltShiftQuality Normal = 1
+	Field: TiltShiftQuality High = 2
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects Tonemapping
+	Field: TonemapperType type
+	Field: AdaptiveTexSize adaptiveTextureSize
+	Field: AnimationCurve remapCurve
+	Field: Texture2D curveTex
+	Field: float exposureAdjustment
+	Field: float middleGrey
+	Field: float white
+	Field: float adaptionSpeed
+	Field: Shader tonemapper
+	Field: boolean validRenderTextureFormat
+	Field: Material tonemapMaterial
+	Field: RenderTexture rt
+	Field: RenderTextureFormat rtFormat
+	Method: void .ctor() - 9ffe8d08
+	Method: boolean CheckResources() - 9ffe8d58
+	Method: float UpdateCurve() - 9ffe8ebc
+	Method: void OnDisable() - 9ffe91c8
+	Method: boolean CreateInternalRenderTexture() - 9ffe9268
+	Method: void OnRenderImage(Void destination) - 9ffe9374
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffe8d58
+Class  TonemapperType
+	Field: int value__
+	Field: TonemapperType SimpleReinhard = 0
+	Field: TonemapperType UserCurve = 1
+	Field: TonemapperType Hable = 2
+	Field: TonemapperType Photographic = 3
+	Field: TonemapperType OptimizedHejiDawson = 4
+	Field: TonemapperType AdaptiveReinhard = 5
+	Field: TonemapperType AdaptiveReinhardAutoWhite = 6
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class  AdaptiveTexSize
+	Field: int value__
+	Field: AdaptiveTexSize Square16 = 16
+	Field: AdaptiveTexSize Square32 = 32
+	Field: AdaptiveTexSize Square64 = 64
+	Field: AdaptiveTexSize Square128 = 128
+	Field: AdaptiveTexSize Square256 = 256
+	Field: AdaptiveTexSize Square512 = 512
+	Field: AdaptiveTexSize Square1024 = 1024
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects Triangles
+	Field: cmod_reqd meshes
+	Field: int currentTris
+	Method: void .ctor() - 9ffe9c30
+	Method: void .cctor() - 9ffe9c38
+	Method: boolean HasMeshes() - 9ffe9c3c
+	Method: void Cleanup() - 9ffe9de8
+	Method: cmod_reqd GetMeshes(int totalHeight) - 9ffea0b0
+	Method: Mesh GetMesh(int totalHeight) - 9ffea460
+	VTable 0: boolean Equals(mvar obj) - a0b5168c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b516f8
+	VTable 3: String ToString() - a0b51704
+Class UnityStandardAssets.ImageEffects Twirl
+	Field: Vector2 radius
+	Field: float angle
+	Field: Vector2 center
+	Method: void .ctor() - 9ffeaa3c
+	Method: void OnRenderImage(Void destination) - 9ffeaac4
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: void Start() - 9ffe29c4
+	VTable 5: void OnDisable() - 9ffe2a30
+Class UnityStandardAssets.ImageEffects VignetteAndChromaticAberration
+	Field: AberrationMode mode
+	Field: float intensity
+	Field: float chromaticAberration
+	Field: float axialAberration
+	Field: float blur
+	Field: float blurSpread
+	Field: float luminanceDependency
+	Field: float blurDistance
+	Field: Shader vignetteShader
+	Field: Shader separableBlurShader
+	Field: Shader chromAberrationShader
+	Field: Material m_VignetteMaterial
+	Field: Material m_SeparableBlurMaterial
+	Field: Material m_ChromAberrationMaterial
+	Method: void .ctor() - 9ffead90
+	Method: boolean CheckResources() - 9ffeadd8
+	Method: void OnRenderImage(Void destination) - 9ffeae4c
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: boolean CheckResources() - 9ffeadd8
+Class  AberrationMode
+	Field: int value__
+	Field: AberrationMode Simple = 0
+	Field: AberrationMode Advanced = 1
+	VTable 0: boolean Equals(mvar obj) - a0b0702c
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0b07044
+	VTable 3: String ToString() - a0b06258
+	VTable 4: String ToString(String provider) - a0b06ecc
+	VTable 5: TypeCode GetTypeCode() - a0b03e20
+	VTable 6: boolean System.IConvertible.ToBoolean(Boolean provider) - a0b03270
+	VTable 7: byte System.IConvertible.ToByte(Byte provider) - a0b03328
+	VTable 8: char System.IConvertible.ToChar(Char provider) - a0b033dc
+	VTable 9: DateTime System.IConvertible.ToDateTime(DateTime provider) - a0b03490
+	VTable 10: Decimal System.IConvertible.ToDecimal(Decimal provider) - a0b03554
+	VTable 11: double System.IConvertible.ToDouble(Double provider) - a0b03618
+	VTable 12: short System.IConvertible.ToInt16(Int16 provider) - a0b036cc
+	VTable 13: int System.IConvertible.ToInt32(Int32 provider) - a0b03780
+	VTable 14: long System.IConvertible.ToInt64(Int64 provider) - a0b03834
+	VTable 15: sbyte System.IConvertible.ToSByte(SByte provider) - a0b038e8
+	VTable 16: float System.IConvertible.ToSingle(Single provider) - a0b0399c
+	VTable 17: String ToString(String provider) - a0b0643c
+	VTable 18: mvar System.IConvertible.ToType(Object provider) - a0b03a50
+	VTable 19: ushort System.IConvertible.ToUInt16(UInt16 provider) - a0b03c04
+	VTable 20: uint System.IConvertible.ToUInt32(UInt32 provider) - a0b03cb8
+	VTable 21: ulong System.IConvertible.ToUInt64(UInt64 provider) - a0b03d6c
+	VTable 22: int CompareTo(mvar target) - a0b060e8
+Class UnityStandardAssets.ImageEffects Vortex
+	Field: Vector2 radius
+	Field: float angle
+	Field: Vector2 center
+	Method: void .ctor() - 9ffeb5dc
+	Method: void OnRenderImage(Void destination) - 9ffeb664
+	VTable 0: boolean Equals(mvar o) - a0a52cac
+	VTable 1: void Finalize() - a0b516f4
+	VTable 2: int GetHashCode() - a0a52db8
+	VTable 3: String ToString() - a0a52b7c
+	VTable 4: void Start() - 9ffe29c4
+	VTable 5: void OnDisable() - 9ffe2a30
+=================Dumped 72 classes ==============================
