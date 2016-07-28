@@ -426,61 +426,60 @@ void* main_thread(void * arg)
 
 	void* pLibCpp = dlopen("libil2cpp.so", RTLD_NOW);
 
-	if (pLibCpp)
-	{
-		InitIl2Cpp(pLibCpp);
+	if (!pLibCpp)
+		return 0;
 
-		void* pDomain = g_GetCurrDomain(0, 0);
-		__android_log_print(ANDROID_LOG_INFO, TAG, "AppDomain %x", pDomain);
-		Il2CppArray* pArray = g_GetAssemblies(pDomain, 0);
-		__android_log_print(ANDROID_LOG_INFO, TAG, "Number of assemblies: %d", pArray->max_length);
-		/*{ // Dumper for System.Reflection.Assembly VTable
-			Assembly_t* pAsm = *(Assembly_t**)((int*)(pArray + 1) + 0);
-			for (int x = 0; x < 40; ++x)
-			{
-				VirtualInvokeData vid = g_GetVirt(x, pAsm);
-				__android_log_print(ANDROID_LOG_INFO, TAG, "System.Reflection.Assembly::%s = %x, %d", vid.methodInfo->name, vid.methodInfo->method, x);
-			}
-		}*/
-		
-		for (int i = 16; i < pArray->max_length; ++i)
+	InitIl2Cpp(pLibCpp);
+
+	void* pDomain = g_GetCurrDomain(0, 0);
+	__android_log_print(ANDROID_LOG_INFO, TAG, "AppDomain %x", pDomain);
+	Il2CppArray* pArray = g_GetAssemblies(pDomain, 0);
+	__android_log_print(ANDROID_LOG_INFO, TAG, "Number of assemblies: %d", pArray->max_length);
+	/*{ // Dumper for System.Reflection.Assembly VTable
+		Assembly_t* pAsm = *(Assembly_t**)((int*)(pArray + 1) + 0);
+		for (int x = 0; x < 40; ++x)
 		{
-			memset(pDumpedClasses, 0, sizeof(pDumpedClasses));
-			uiDumpedIndex = 0;
-			// This'll crash the app if commmented
-			//if (i == 17)
-			//	continue;
-
-			Assembly_t* pAsm = *(Assembly_t**)((int*)(pArray + 1) + i);
-
-			VirtualInvokeData vid = g_GetVirt(3, pAsm);
-			String_t* pName = vid.methodInfo->method(vid.target, (void*)vid.methodInfo);
-
-			char buff[2048];
-			memset(buff, 0, 2048);
-			int copyLen = pName->___length_0 * 2;
-			memcpy(buff, &(pName->___start_char_1), copyLen);
-			convert_stringt_to_char(buff, pName->___length_0);
-
-			Il2CppImage* pImage = g_GetImageFromIndex(pAsm->____mono_assembly_0->uiImageIndex);
-			
-			__android_log_print(ANDROID_LOG_INFO, TAG, "Assembly %d: %s\n\tContains %d classes", i + 1, buff, pImage->uiTypeCount);
-
-			__android_log_print(ANDROID_LOG_INFO, TAG, "=================Beginning class dump==============================");
-			for (int x = 0; x < pImage->uiTypeCount; ++x)
-			{
-				Il2CppClass* type = g_GetClassFromIndex(x + pImage->uiTypeStart);
-				//vid = g_GetVirt(14, type);
-				if (strstr(type->name, "<"))
-					continue;
-				dump_class(type);
-				usleep(WAIT_TIME);
-			}
-			__android_log_print(ANDROID_LOG_INFO, TAG, "=================Dumped %d classes ==============================", uiDumpedIndex);
-
+			VirtualInvokeData vid = g_GetVirt(x, pAsm);
+			__android_log_print(ANDROID_LOG_INFO, TAG, "System.Reflection.Assembly::%s = %x, %d", vid.methodInfo->name, vid.methodInfo->method, x);
 		}
+	}*/
+		
+	for (int i = 16; i < pArray->max_length; ++i)
+	{
+		memset(pDumpedClasses, 0, sizeof(pDumpedClasses));
+		uiDumpedIndex = 0;
+		// This'll crash the app if commmented
+		//if (i == 17)
+		//	continue;
+
+		Assembly_t* pAsm = *(Assembly_t**)((int*)(pArray + 1) + i);
+
+		VirtualInvokeData vid = g_GetVirt(3, pAsm);
+		String_t* pName = vid.methodInfo->method(vid.target, (void*)vid.methodInfo);
+
+		char buff[2048];
+		memset(buff, 0, 2048);
+		int copyLen = pName->___length_0 * 2;
+		memcpy(buff, &(pName->___start_char_1), copyLen);
+		convert_stringt_to_char(buff, pName->___length_0);
+
+		Il2CppImage* pImage = g_GetImageFromIndex(pAsm->____mono_assembly_0->uiImageIndex);
+			
+		__android_log_print(ANDROID_LOG_INFO, TAG, "Assembly %d: %s\n\tContains %d classes", i + 1, buff, pImage->uiTypeCount);
+
+		__android_log_print(ANDROID_LOG_INFO, TAG, "=================Beginning class dump==============================");
+		for (int x = 0; x < pImage->uiTypeCount; ++x)
+		{
+			Il2CppClass* type = g_GetClassFromIndex(x + pImage->uiTypeStart);
+			//vid = g_GetVirt(14, type);
+			if (strstr(type->name, "<"))
+				continue;
+			dump_class(type);
+			usleep(WAIT_TIME);
+		}
+		__android_log_print(ANDROID_LOG_INFO, TAG, "=================Dumped %d classes ==============================", uiDumpedIndex);
+
 	}
-	
 }
 
 void start_main()
@@ -522,9 +521,9 @@ JNIEXPORT void JNICALL CallJNIUL(
 {
 	if (!pLibRealUnity)
 		pLibRealUnity = dlopen("librealunity.so", RTLD_NOW);
-	if (!RealJNIOnLoad)
-		RealJNIOnLoad = dlsym(pLibRealUnity, "JNI_OnUnload");
-	RealJNIOnLoad(vm, reserved);
+	if (!RealJNIOnUnload)
+		RealJNIOnUnload = dlsym(pLibRealUnity, "JNI_OnUnload");
+	RealJNIOnUnload(vm, reserved);
 }
 
 void UnitySendMessage(const char* ob, const char* method, const char* msg)
