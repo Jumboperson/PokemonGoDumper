@@ -384,7 +384,7 @@ void dump_class(Il2CppClass* type)
 				{
 					usleep(200000);
 					Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, klass->name, pMethod->name, pMethod->method);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s(%s) - %x", z, klass->name, pMethod->name, tempBuff, pMethod->method);
 
 					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
 						&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
@@ -393,7 +393,7 @@ void dump_class(Il2CppClass* type)
 				}
 				else
 				{
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, szTypeString[pMethod->return_type->type], pMethod->name, pMethod->method);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s(%s) - %x", z, szTypeString[pMethod->return_type->type], pMethod->name, tempBuff, pMethod->method);
 				}
 			}
 		}
