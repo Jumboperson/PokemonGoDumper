@@ -204,7 +204,7 @@ void dump_class(Il2CppClass* type)
 	if (CheckDumped(type))
 		return;
 	__android_log_print(ANDROID_LOG_INFO, TAG, "Class %s %s", type->namespaze, type->name);
-	Il2CppClass* arr[75];
+	Il2CppClass* arr[60];
 	memset(arr, 0, sizeof(arr));
 	uint32_t uiIndex = 0;
 	g_SetupClass(type);
@@ -218,7 +218,8 @@ void dump_class(Il2CppClass* type)
 				Il2CppClass* klass = g_GetClassFromIndex(type->fields[z].type->data.klassIndex);
 				__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s", klass->name, type->fields[z].name);
 
-				if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
+				if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
+					&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl"))
 					arr[uiIndex++] = klass;
 			}
 			else
@@ -241,7 +242,8 @@ void dump_class(Il2CppClass* type)
 						Il2CppClass* klass = g_GetClassFromIndex(type->fields[z].type->data.klassIndex);
 						__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s = %d", klass->name, type->fields[z].name, dat.i);
 						
-						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
+						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
+							&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl"))
 							arr[uiIndex++] = klass;
 					}
 					else if (type->fields[z].type->type == IL2CPP_TYPE_I
@@ -313,7 +315,8 @@ void dump_class(Il2CppClass* type)
 						usleep(200000);
 						Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
 						szTypeName = klass->name;
-						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
+						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
+							&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl"))
 							arr[uiIndex++] = klass;
 					}
 					iBuffLoc += sprintf(tempBuff, szFormat, szTypeName, pMethod->parameters[i].name);
@@ -330,7 +333,8 @@ void dump_class(Il2CppClass* type)
 					Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
 					__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s(%s) - %x", klass->name, pMethod->name, tempBuff, pMethod->method);
 
-					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
+					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
+						&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl"))
 						arr[uiIndex++] = klass;
 				}
 				else
@@ -359,7 +363,8 @@ void dump_class(Il2CppClass* type)
 						usleep(200000);
 						Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
 						szTypeName = klass->name;
-						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
+						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
+							&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl"))
 							arr[uiIndex++] = klass;
 					}
 					iBuffLoc += sprintf(tempBuff, szFormat, szTypeName, pMethod->parameters[i].name);
@@ -376,7 +381,8 @@ void dump_class(Il2CppClass* type)
 					Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
 					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, klass->name, pMethod->name, pMethod->method);
 
-					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
+					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
+						&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl"))
 						arr[uiIndex++] = klass;
 				}
 				else
