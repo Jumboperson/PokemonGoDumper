@@ -204,7 +204,7 @@ void dump_class(Il2CppClass* type)
 	if (CheckDumped(type))
 		return;
 	__android_log_print(ANDROID_LOG_INFO, TAG, "Class %s %s", type->namespaze, type->name);
-	Il2CppClass* arr[100];
+	Il2CppClass* arr[75];
 	memset(arr, 0, sizeof(arr));
 	uint32_t uiIndex = 0;
 	g_SetupClass(type);
@@ -214,10 +214,11 @@ void dump_class(Il2CppClass* type)
 		{
 			if (!(type->fields[z].type->attrs & FIELD_ATTRIBUTE_STATIC) && (type->fields[z].type->type == IL2CPP_TYPE_CLASS || type->fields[z].type->type == IL2CPP_TYPE_VALUETYPE))
 			{
+				usleep(200000);
 				Il2CppClass* klass = g_GetClassFromIndex(type->fields[z].type->data.klassIndex);
 				__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s", klass->name, type->fields[z].name);
 
-				if (!CheckArr(arr, uiIndex, klass))
+				if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
 					arr[uiIndex++] = klass;
 			}
 			else
@@ -240,7 +241,7 @@ void dump_class(Il2CppClass* type)
 						Il2CppClass* klass = g_GetClassFromIndex(type->fields[z].type->data.klassIndex);
 						__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s = %d", klass->name, type->fields[z].name, dat.i);
 						
-						if (!CheckArr(arr, uiIndex, klass))
+						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
 							arr[uiIndex++] = klass;
 					}
 					else if (type->fields[z].type->type == IL2CPP_TYPE_I
@@ -278,7 +279,7 @@ void dump_class(Il2CppClass* type)
 					else if (type->fields[z].type->type == IL2CPP_TYPE_STRING)
 					{
 						String_t* pStr = (String_t*)dat.i;
-						memset(tempBuff, 0, 2048);
+						memset(tempBuff, 0, sizeof(tempBuff));
 						int copyLen = pStr->___length_0 * 2;
 						memcpy(tempBuff, &(pStr->___start_char_1), copyLen);
 						convert_stringt_to_char(tempBuff, pStr->___length_0);
@@ -293,23 +294,48 @@ void dump_class(Il2CppClass* type)
 		}
 	}
 
+	char* szFormat = "%s %s";
 	if (type->methods)
 	{
 		for (int z = 0; z < type->method_count; ++z)
 		{
-			if (type->methods[z])
+			MethodInfo* pMethod = type->methods[z];
+			if (pMethod)
 			{
-				if (type->methods[z]->return_type->type == IL2CPP_TYPE_CLASS || type->methods[z]->return_type->type == IL2CPP_TYPE_VALUETYPE)
+				memset(tempBuff, 0, sizeof(tempBuff));
+				int iBuffLoc = 0;
+				for (int i = 0; i < pMethod->parameters_count; ++i)
 				{
-					Il2CppClass* klass = g_GetClassFromIndex(type->methods[z]->return_type->data.klassIndex);
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s - %x", klass->name, type->methods[z]->name, type->methods[z]->method);
+					char* szTypeName = szTypeString[pMethod->parameters[i].parameter_type->type];
+					if (pMethod->parameters[i].parameter_type->type == IL2CPP_TYPE_CLASS
+						|| pMethod->parameters[i].parameter_type->type == IL2CPP_TYPE_VALUETYPE)
+					{
+						usleep(200000);
+						Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
+						szTypeName = klass->name;
+						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
+							arr[uiIndex++] = klass;
+					}
+					iBuffLoc += sprintf(tempBuff, szFormat, szTypeName, pMethod->parameters[i].name);
+					if (i + 1 != pMethod->parameters_count)
+					{
+						tempBuff[iBuffLoc++] = ',';
+						tempBuff[iBuffLoc++] = ' ';
+					}
+				}
 
-					if (!CheckArr(arr, uiIndex, klass))
+				if (pMethod->return_type->type == IL2CPP_TYPE_CLASS || pMethod->return_type->type == IL2CPP_TYPE_VALUETYPE)
+				{
+					usleep(200000);
+					Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s(%s) - %x", klass->name, pMethod->name, tempBuff, pMethod->method);
+
+					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
 						arr[uiIndex++] = klass;
 				}
 				else
 				{
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s - %x", szTypeString[type->methods[z]->return_type->type], type->methods[z]->name, type->methods[z]->method);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s(%s) - %x", szTypeString[pMethod->return_type->type], pMethod->name, tempBuff, pMethod->method);
 				}
 			}
 		}
@@ -319,20 +345,43 @@ void dump_class(Il2CppClass* type)
 	{
 		for (int z = 0; z < type->vtable_count; ++z)
 		{
-			if (type->vtable[z])
+			MethodInfo* pMethod = type->vtable[z];
+			if (pMethod)
 			{
-				
-				if (type->vtable[z]->return_type->type == IL2CPP_TYPE_CLASS || type->vtable[z]->return_type->type == IL2CPP_TYPE_VALUETYPE)
+				memset(tempBuff, 0, sizeof(tempBuff));
+				int iBuffLoc = 0;
+				for (int i = 0; i < pMethod->parameters_count; ++i)
 				{
-					Il2CppClass* klass = g_GetClassFromIndex(type->vtable[z]->return_type->data.klassIndex);
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, klass->name, type->vtable[z]->name, type->methods[z]->method);
+					char* szTypeName = szTypeString[pMethod->parameters[i].parameter_type->type];
+					if (pMethod->parameters[i].parameter_type->type == IL2CPP_TYPE_CLASS
+						|| pMethod->parameters[i].parameter_type->type == IL2CPP_TYPE_VALUETYPE)
+					{
+						usleep(200000);
+						Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
+						szTypeName = klass->name;
+						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
+							arr[uiIndex++] = klass;
+					}
+					iBuffLoc += sprintf(tempBuff, szFormat, szTypeName, pMethod->parameters[i].name);
+					if (i + 1 != pMethod->parameters_count)
+					{
+						tempBuff[iBuffLoc++] = ',';
+						tempBuff[iBuffLoc++] = ' ';
+					}
+				}
+				
+				if (pMethod->return_type->type == IL2CPP_TYPE_CLASS || pMethod->return_type->type == IL2CPP_TYPE_VALUETYPE)
+				{
+					usleep(200000);
+					Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, klass->name, pMethod->name, pMethod->method);
 
-					if (!CheckArr(arr, uiIndex, klass))
+					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") && !strstr(klass->namespaze, "UnityEngi"))
 						arr[uiIndex++] = klass;
 				}
 				else
 				{
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, szTypeString[type->vtable[z]->return_type->type], type->vtable[z]->name, type->vtable[z]->method);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s - %x", z, szTypeString[pMethod->return_type->type], pMethod->name, pMethod->method);
 				}
 			}
 		}
@@ -376,7 +425,7 @@ void* main_thread(void * arg)
 			}
 		}*/
 		
-		for (int i = 4; i < pArray->max_length; ++i)
+		for (int i = 5; i < pArray->max_length; ++i)
 		{
 			memset(pDumpedClasses, 0, sizeof(pDumpedClasses));
 			uiDumpedIndex = 0;

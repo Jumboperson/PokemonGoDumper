@@ -138,7 +138,7 @@ typedef struct
 
 typedef struct
 {
-	const char* name;
+	char* name;
 	const Il2CppType* type;
 	/*Il2CppClass*/void *parent;
 	int32_t offset;	// If offset is -1, then it's thread static
@@ -163,7 +163,7 @@ typedef struct
 	// The following fields are always valid for a Il2CppClass structure
 	const Il2CppImage* image;
 	void* gc_desc;
-	const char* name;
+	char* name;
 	const char* namespaze;
 	const /*Il2CppType*/void* byval_arg;
 	const /*Il2CppType*/void* this_arg;
@@ -179,10 +179,10 @@ typedef struct
 	FieldInfo* fields; // Initialized in SetupFields
 	const /*EventInfo*/void* events; // Initialized in SetupEvents
 	const /*PropertyInfo*/void* properties; // Initialized in SetupProperties
-	const MethodInfo** methods; // Initialized in SetupMethods
+	MethodInfo** methods; // Initialized in SetupMethods
 	/*Il2CppClass*/void** nestedTypes; // Initialized in SetupNestedTypes
 	/*Il2CppClass*/void** implementedInterfaces; // Initialized in SetupInterfaces
-	const MethodInfo** vtable; // Initialized in Init
+	MethodInfo** vtable; // Initialized in Init
 	/*Il2CppRuntimeInterfaceOffsetPair*/void* interfaceOffsets; // Initialized in Init
 	void* static_fields; // Initialized in Init
 	const /*Il2CppRGCTXData*/void* rgctx_data; // Initialized in Init
