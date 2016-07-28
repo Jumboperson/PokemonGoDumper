@@ -165,8 +165,8 @@ typedef struct
 	void* gc_desc;
 	char* name;
 	const char* namespaze;
-	const /*Il2CppType*/void* byval_arg;
-	const /*Il2CppType*/void* this_arg;
+	const Il2CppType* byval_arg;
+	const Il2CppType* this_arg;
 	/*Il2CppClass*/void* element_class;
 	/*Il2CppClass*/void* castClass;
 	/*Il2CppClass*/void* declaringType;
