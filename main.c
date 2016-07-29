@@ -534,8 +534,8 @@ void* main_thread(void * arg)
 		{
 			Il2CppClass* type = g_GetClassFromIndex(x + pImage->uiTypeStart);
 			//vid = g_GetVirt(14, type);
-			if (!strstr(type->namespaze, "Rpc"))
-				continue;
+			//if (strstr(type->namespaze, "Rpc"))
+			//	continue;
 			dump_class(type);
 			usleep(WAIT_TIME);
 		}
