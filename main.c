@@ -505,8 +505,23 @@ void* main_thread(void * arg)
 			__android_log_print(ANDROID_LOG_INFO, TAG, "System.Reflection.Assembly::%s = %x, %d", vid.methodInfo->name, vid.methodInfo->method, x);
 		}
 	}*/
-		
-	for (int i = 16; i < pArray->max_length; ++i)
+	
+	// 0 - mscorlib
+	// 1 - System
+	// 4 - Google.Protobuf
+	// 5 - Niantic.Promenade
+	// 6 - Niantic.Promenade.Auth
+	// 7 - OSCsharp
+	// 8 - System.Transactions
+	// 9 - System.Xml
+	// 10 - System.Data
+	// 11 - Newtonsoft.Json
+	// 12 - TUIOsharp
+	// 13 - UnityEngine
+	// 14 - UnityEngine.UI
+	// 15 - Assembly-CSharp-firstpass
+	// 16 - Assembly-CSharp
+	for (int i = 15; i < pArray->max_length; ++i)
 	{
 		memset(pDumpedClasses, 0, sizeof(pDumpedClasses));
 		uiDumpedIndex = 0;
