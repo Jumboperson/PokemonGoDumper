@@ -10,6 +10,7 @@
 // If you're stuck using gcc like me then be sure to compile with -std=c99
 
 #define TAG "MyCode"
+#define DEBUG_TAG "DebugCode"
 
 typedef void*(*il2cpp_domain_get_t)(void);
 typedef int(*il2cpp_domain_assembly_open_t)(void* a_domain, char* a_file);
@@ -58,8 +59,12 @@ __android_log_print_t __android_log_print = 0;
 #define ANDROID_LOG_INFO 4
 #define nullchk(x) (x!=0)
 
+Il2CppGlobalMetadataHeader* g_pMetadata = 0;
+
 int InitIl2Cpp(void* il2cpp)
 {
+	__android_log_print(ANDROID_LOG_INFO, TAG, "/*");
+
 	g_GetMonoDomain = dlsym(il2cpp, "il2cpp_domain_get");
 	__android_log_print(ANDROID_LOG_INFO, TAG, "g_GetMonoDomain %x", (unsigned int)g_GetMonoDomain);
 
@@ -80,6 +85,9 @@ int InitIl2Cpp(void* il2cpp)
 
 	/*return nullchk(g_GetMonoDomain) && nullchk(g_OpenAssembly) && nullchk(g_GetAssemblyImage) && nullchk(g_GetClassFromName)
 		&& nullchk(g_ClassMethodFromName) && nullchk(g_InvokeRuntime);*/
+
+	g_pMetadata = *(Il2CppGlobalMetadataHeader**)((char*)dlsym(il2cpp, "_ZN6il2cpp2vm11Environment9main_argsE") + 0x6c);
+	__android_log_print(ANDROID_LOG_INFO, TAG, "g_pMetadata %x", (unsigned int)g_pMetadata);
 
 	// Il2CppArray<Il2CppAssembly> il2cpp::icalls::mscorlib::System::AppDomain::GetAssemblies()
 	g_GetAssemblies = dlsym(il2cpp, "_ZN6il2cpp6icalls8mscorlib6System9AppDomain13GetAssembliesEP15Il2CppAppDomainb");
@@ -113,6 +121,8 @@ int InitIl2Cpp(void* il2cpp)
 
 	g_GetFieldDefault = dlsym(il2cpp, "_ZN6il2cpp2vm5Field20GetDefaultFieldValueEP9FieldInfoPv");
 	__android_log_print(ANDROID_LOG_INFO, TAG, "g_GetFieldDefault %x", (unsigned int)g_GetFieldDefault);
+
+	__android_log_print(ANDROID_LOG_INFO, TAG, "*/");
 
 	return nullchk(g_GetAssemblies) && nullchk(g_GetCurrDomain) && nullchk(g_GetVirt) && nullchk(g_GetTypeName) && nullchk(g_GetAssemblyTypes)
 		&& nullchk(GC_free) && nullchk(g_GetClassFromIndex) && nullchk(g_GetImageFromIndex) && nullchk(g_SetupClass) && nullchk(g_GetFieldDefault);
@@ -187,7 +197,7 @@ int CheckDumped(Il2CppClass* klass)
 {
 	for (int i = 0; i < uiDumpedIndex; ++i)
 		if (pDumpedClasses[i] == klass)
-			return 1;
+			return i;
 	return 0;
 }
 
@@ -201,29 +211,55 @@ int CheckArr(Il2CppClass** pArr, uint32_t uiSize, Il2CppClass* pVal)
 
 #define WAIT_TIME 600000
 
+Il2CppClass* GetClassFromIndex(uint32_t uiIndex)
+{
+	for (int i = 0; i < uiDumpedIndex; ++i)
+	{
+		if (pDumpedClasses[i]->this_arg->data.klassIndex == uiIndex)
+			return pDumpedClasses[i];
+	}
+	if (uiIndex >= g_pMetadata->typeDefinitionsCount / sizeof(Il2CppTypeDefinition))
+		return 0;
+
+	usleep(WAIT_TIME);
+	return g_GetClassFromIndex(uiIndex);
+}
+
 void dump_class(Il2CppClass* type)
 {
 	if (CheckDumped(type))
 		return;
-	__android_log_print(ANDROID_LOG_INFO, TAG, "Class %s %s", type->namespaze, type->name);
+	__android_log_print(ANDROID_LOG_INFO, TAG, "// Namespace: %s", type->namespaze);
+	__android_log_print(ANDROID_LOG_INFO, TAG, "class %s", type->name);
+	__android_log_print(ANDROID_LOG_INFO, TAG, "{");
+
 	Il2CppClass* arr[60];
 	memset(arr, 0, sizeof(arr));
 	uint32_t uiIndex = 0;
 	g_SetupClass(type);
 	if (type->fields)
 	{
+		__android_log_print(ANDROID_LOG_INFO, TAG, "\t// Fields");
 		for (int z = 0; z < type->field_count; ++z)
 		{
 			if (!(type->fields[z].type->attrs & FIELD_ATTRIBUTE_STATIC) && (type->fields[z].type->type == IL2CPP_TYPE_CLASS || type->fields[z].type->type == IL2CPP_TYPE_VALUETYPE))
 			{
-				usleep(WAIT_TIME);
-				Il2CppClass* klass = g_GetClassFromIndex(type->fields[z].type->data.klassIndex);
-				__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s", klass->name, type->fields[z].name);
+				
+				Il2CppClass* klass = GetClassFromIndex(type->fields[z].type->data.klassIndex);
+				if (klass)
+				{
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\t%s %s;", klass->name, type->fields[z].name);
 
-				if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
-					&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
-					&& !CheckDumped(type))
-					arr[uiIndex++] = klass;
+					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+						&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
+						&& !CheckDumped(type))
+						arr[uiIndex++] = klass;
+				}
+				else
+				{
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\t%s %s;", szTypeString[type->fields[z].type->type], type->fields[z].name);
+				}
+				
 			}
 			else
 			{
@@ -242,21 +278,27 @@ void dump_class(Il2CppClass* type)
 					
 					if (type->fields[z].type->type == IL2CPP_TYPE_CLASS || type->fields[z].type->type == IL2CPP_TYPE_VALUETYPE)
 					{
-						usleep(WAIT_TIME);
-						Il2CppClass* klass = g_GetClassFromIndex(type->fields[z].type->data.klassIndex);
-						__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s = %d", klass->name, type->fields[z].name, dat.i);
-						
-						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
-							&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
-							&& !CheckDumped(type))
-							arr[uiIndex++] = klass;
+						Il2CppClass* klass = GetClassFromIndex(type->fields[z].type->data.klassIndex);
+						if (klass)
+						{
+							__android_log_print(ANDROID_LOG_INFO, TAG, "\tstatic %s %s = %d;", klass->name, type->fields[z].name, dat.i);
+
+							if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+								&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
+								&& !CheckDumped(type))
+								arr[uiIndex++] = klass;
+						}
+						else
+						{
+							__android_log_print(ANDROID_LOG_INFO, TAG, "\tstatic %s %s = %d;", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.i);
+						}
 					}
 					else if (type->fields[z].type->type == IL2CPP_TYPE_I
 						|| type->fields[z].type->type == IL2CPP_TYPE_I4
 						|| type->fields[z].type->type == IL2CPP_TYPE_I1
 						|| type->fields[z].type->type == IL2CPP_TYPE_I2)
 					{
-						__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s = %d", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.i);
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\tstatic %s %s = %d;", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.i);
 					}
 
 					else if (type->fields[z].type->type == IL2CPP_TYPE_U
@@ -264,24 +306,24 @@ void dump_class(Il2CppClass* type)
 						|| type->fields[z].type->type == IL2CPP_TYPE_U1
 						|| type->fields[z].type->type == IL2CPP_TYPE_U2)
 					{
-						__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s = %u", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.i);
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\tstatic %s %s = %u;", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.i);
 					}
 
 					else if (type->fields[z].type->type == IL2CPP_TYPE_R4)
 					{
-						__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s = %f", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.f);
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\tstatic %s %s = %f;", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.f);
 					}
 					else if (type->fields[z].type->type == IL2CPP_TYPE_R8)
 					{
-						__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s = %lf", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.d);
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\tstatic %s %s = %lf;", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.d);
 					}
 					else if (type->fields[z].type->type == IL2CPP_TYPE_U8)
 					{
-						__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s = %lu", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.i);
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\tstatic %s %s = %lu;", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.i);
 					}
 					else if (type->fields[z].type->type == IL2CPP_TYPE_I8)
 					{
-						__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s = %ld", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.i);
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\tstatic %s %s = %ld;", szTypeString[type->fields[z].type->type], type->fields[z].name, dat.i);
 					}
 					else if (type->fields[z].type->type == IL2CPP_TYPE_STRING)
 					{
@@ -290,12 +332,12 @@ void dump_class(Il2CppClass* type)
 						int copyLen = pStr->___length_0 * 2;
 						memcpy(tempBuff, &(pStr->___start_char_1), copyLen);
 						convert_stringt_to_char(tempBuff, pStr->___length_0);
-						__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s = \"%s\"", szTypeString[type->fields[z].type->type], type->fields[z].name, tempBuff);
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\tstatic %s %s = @\"%s\";", szTypeString[type->fields[z].type->type], type->fields[z].name, tempBuff);
 					}
 				}
 				else
 				{
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tField: %s %s", szTypeString[type->fields[z].type->type], type->fields[z].name);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\t%s %s;", szTypeString[type->fields[z].type->type], type->fields[z].name);
 				}
 			}
 		}
@@ -304,6 +346,7 @@ void dump_class(Il2CppClass* type)
 	char* szFormat = "%s %s";
 	if (type->methods)
 	{
+		__android_log_print(ANDROID_LOG_INFO, TAG, "\n\t// Methods");
 		for (int z = 0; z < type->method_count; ++z)
 		{
 			MethodInfo* pMethod = type->methods[z];
@@ -318,13 +361,15 @@ void dump_class(Il2CppClass* type)
 					if (pMethod->parameters[i].parameter_type->type == IL2CPP_TYPE_CLASS
 						|| pMethod->parameters[i].parameter_type->type == IL2CPP_TYPE_VALUETYPE)
 					{
-						usleep(WAIT_TIME);
-						Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
-						szTypeName = klass->name;
-						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
-							&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
-							&& !CheckDumped(type))
-							arr[uiIndex++] = klass;
+						Il2CppClass* klass = GetClassFromIndex(pMethod->return_type->data.klassIndex);
+						if (klass)
+						{
+							szTypeName = klass->name;
+							if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+								&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
+								&& !CheckDumped(type))
+								arr[uiIndex++] = klass;
+						}
 					}
 					iBuffLoc += sprintf(&tempBuff[iBuffLoc], szFormat, szTypeName, pMethod->parameters[i].name);
 					if (i + 1 != pMethod->parameters_count)
@@ -336,18 +381,24 @@ void dump_class(Il2CppClass* type)
 
 				if (pMethod->return_type->type == IL2CPP_TYPE_CLASS || pMethod->return_type->type == IL2CPP_TYPE_VALUETYPE)
 				{
-					usleep(WAIT_TIME);
-					Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s(%s) - %x", klass->name, pMethod->name, tempBuff, pMethod->method);
+					Il2CppClass* klass = GetClassFromIndex(pMethod->return_type->data.klassIndex);
+					if (klass)
+					{
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\t%s %s(%s); // %x", klass->name, pMethod->name, tempBuff, pMethod->method);
 
-					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
-						&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
-						&& !CheckDumped(type))
-						arr[uiIndex++] = klass;
+						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+							&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
+							&& !CheckDumped(type))
+							arr[uiIndex++] = klass;
+					}
+					else
+					{
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\t%s %s(%s); // %x", szTypeString[pMethod->return_type->type], pMethod->name, tempBuff, pMethod->method);
+					}
 				}
 				else
 				{
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tMethod: %s %s(%s) - %x", szTypeString[pMethod->return_type->type], pMethod->name, tempBuff, pMethod->method);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\t%s %s(%s); // %x", szTypeString[pMethod->return_type->type], pMethod->name, tempBuff, pMethod->method);
 				}
 			}
 		}
@@ -355,6 +406,7 @@ void dump_class(Il2CppClass* type)
 
 	if (type->vtable)
 	{
+		__android_log_print(ANDROID_LOG_INFO, TAG, "\n\t// VTable");
 		for (int z = 0; z < type->vtable_count; ++z)
 		{
 			MethodInfo* pMethod = type->vtable[z];
@@ -369,13 +421,15 @@ void dump_class(Il2CppClass* type)
 					if (pMethod->parameters[i].parameter_type->type == IL2CPP_TYPE_CLASS
 						|| pMethod->parameters[i].parameter_type->type == IL2CPP_TYPE_VALUETYPE)
 					{
-						usleep(WAIT_TIME);
-						Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
-						szTypeName = klass->name;
-						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
-							&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
-							&& !CheckDumped(type))
-							arr[uiIndex++] = klass;
+						Il2CppClass* klass = GetClassFromIndex(pMethod->return_type->data.klassIndex);
+						if (klass)
+						{
+							szTypeName = klass->name;
+							if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+								&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
+								&& !CheckDumped(type))
+								arr[uiIndex++] = klass;
+						}
 					}
 					iBuffLoc += sprintf(&tempBuff[iBuffLoc], szFormat, szTypeName, pMethod->parameters[i].name);
 					if (i + 1 != pMethod->parameters_count)
@@ -388,23 +442,31 @@ void dump_class(Il2CppClass* type)
 				if (pMethod->return_type->type == IL2CPP_TYPE_CLASS 
 					|| pMethod->return_type->type == IL2CPP_TYPE_VALUETYPE)
 				{
-					usleep(WAIT_TIME);
-					Il2CppClass* klass = g_GetClassFromIndex(pMethod->return_type->data.klassIndex);
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s(%s) - %x", z, klass->name, pMethod->name, tempBuff, pMethod->method);
+					Il2CppClass* klass = GetClassFromIndex(pMethod->return_type->data.klassIndex);
+					if (klass)
+					{
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\tvirtual %s %s(%s); // %d - %x", klass->name, pMethod->name, tempBuff, z, pMethod->method);
 
-					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst") 
-						&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
-						&& !CheckDumped(type))
-						arr[uiIndex++] = klass;
+						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+							&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
+							&& !CheckDumped(type))
+							arr[uiIndex++] = klass;
+					}
+					else
+					{
+						__android_log_print(ANDROID_LOG_INFO, TAG, "\tvirtual %s %s(%s); // %d - %x", szTypeString[pMethod->return_type->type], pMethod->name, tempBuff, z, pMethod->method);
+					}
 				}
 				else
 				{
-					__android_log_print(ANDROID_LOG_INFO, TAG, "\tVTable %d: %s %s(%s) - %x", z, szTypeString[pMethod->return_type->type], pMethod->name, tempBuff, pMethod->method);
+					__android_log_print(ANDROID_LOG_INFO, TAG, "\tvirtual %s %s(%s); // %d - %x", szTypeString[pMethod->return_type->type], pMethod->name, tempBuff, z, pMethod->method);
 				}
 			}
 		}
 	}
-	AddDumped(type);
+	if (!CheckDumped(type))
+		AddDumped(type);
+	__android_log_print(ANDROID_LOG_INFO, TAG, "}");
 	for (int i = 0; i < uiIndex; ++i)
 	{
 		dump_class(arr[i]);
@@ -422,7 +484,7 @@ void* main_thread(void * arg)
 	if (!__android_log_print)
 		__android_log_print = dlsym(pLibLog, "__android_log_print");
 
-	__android_log_print(ANDROID_LOG_INFO, TAG, "Injector Called");
+	__android_log_print(ANDROID_LOG_INFO, TAG, "// Injector Called");
 
 	void* pLibCpp = dlopen("libil2cpp.so", RTLD_NOW);
 
@@ -432,9 +494,9 @@ void* main_thread(void * arg)
 	InitIl2Cpp(pLibCpp);
 
 	void* pDomain = g_GetCurrDomain(0, 0);
-	__android_log_print(ANDROID_LOG_INFO, TAG, "AppDomain %x", pDomain);
+	__android_log_print(ANDROID_LOG_INFO, TAG, "// AppDomain %x", pDomain);
 	Il2CppArray* pArray = g_GetAssemblies(pDomain, 0);
-	__android_log_print(ANDROID_LOG_INFO, TAG, "Number of assemblies: %d", pArray->max_length);
+	__android_log_print(ANDROID_LOG_INFO, TAG, "// Number of assemblies: %d", pArray->max_length);
 	/*{ // Dumper for System.Reflection.Assembly VTable
 		Assembly_t* pAsm = *(Assembly_t**)((int*)(pArray + 1) + 0);
 		for (int x = 0; x < 40; ++x)
@@ -465,9 +527,9 @@ void* main_thread(void * arg)
 
 		Il2CppImage* pImage = g_GetImageFromIndex(pAsm->____mono_assembly_0->uiImageIndex);
 			
-		__android_log_print(ANDROID_LOG_INFO, TAG, "Assembly %d: %s\n\tContains %d classes", i + 1, buff, pImage->uiTypeCount);
+		__android_log_print(ANDROID_LOG_INFO, TAG, "/* Assembly %d: %s\n\tContains %04d classes */", i + 1, buff, pImage->uiTypeCount);
 
-		__android_log_print(ANDROID_LOG_INFO, TAG, "=================Beginning class dump==============================");
+		__android_log_print(ANDROID_LOG_INFO, TAG, "/****************** Beginning class dump ****************************/");
 		for (int x = 0; x < pImage->uiTypeCount; ++x)
 		{
 			Il2CppClass* type = g_GetClassFromIndex(x + pImage->uiTypeStart);
@@ -477,7 +539,7 @@ void* main_thread(void * arg)
 			dump_class(type);
 			usleep(WAIT_TIME);
 		}
-		__android_log_print(ANDROID_LOG_INFO, TAG, "=================Dumped %d classes ==============================", uiDumpedIndex);
+		__android_log_print(ANDROID_LOG_INFO, TAG, "/****************** Dumped %04d classes *****************************/", uiDumpedIndex);
 
 	}
 }
@@ -532,7 +594,7 @@ void UnitySendMessage(const char* ob, const char* method, const char* msg)
 		pLibLog = dlopen("liblog.so", RTLD_NOW);
 	if (!__android_log_print)
 		__android_log_print = dlsym(pLibLog, "__android_log_print");
-	__android_log_print(ANDROID_LOG_INFO, TAG, "USM");
+	__android_log_print(ANDROID_LOG_INFO, DEBUG_TAG, "USM");
 
 	if (!iBeenInjected)
 		start_main();
@@ -545,7 +607,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved)
 		pLibLog = dlopen("liblog.so", RTLD_NOW);
 	if (!__android_log_print)
 		__android_log_print = dlsym(pLibLog, "__android_log_print");
-	__android_log_print(ANDROID_LOG_INFO, TAG, "JNI_OnLoad");
+	__android_log_print(ANDROID_LOG_INFO, DEBUG_TAG, "JNI_OnLoad");
 
 	if (!iBeenInjected)
 		start_main();
@@ -557,7 +619,7 @@ JNIEXPORT void JNICALL JNI_OnUnload(JavaVM* vm, void* reserved)
 		pLibLog = dlopen("liblog.so", RTLD_NOW);
 	if (!__android_log_print)
 		__android_log_print = dlsym(pLibLog, "__android_log_print");
-	__android_log_print(ANDROID_LOG_INFO, TAG, "JNI_OnUnload");
+	__android_log_print(ANDROID_LOG_INFO, DEBUG_TAG, "JNI_OnUnload");
 
 	if (!iBeenInjected)
 		start_main();
