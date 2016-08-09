@@ -86,7 +86,7 @@ int InitIl2Cpp(void* il2cpp)
 	/*return nullchk(g_GetMonoDomain) && nullchk(g_OpenAssembly) && nullchk(g_GetAssemblyImage) && nullchk(g_GetClassFromName)
 		&& nullchk(g_ClassMethodFromName) && nullchk(g_InvokeRuntime);*/
 
-	g_pMetadata = *(Il2CppGlobalMetadataHeader**)((char*)dlsym(il2cpp, "_ZN6il2cpp2vm11Environment9main_argsE") + 0x6c);
+	g_pMetadata = *(Il2CppGlobalMetadataHeader**)(((char*)dlsym(il2cpp, "_ZN6il2cpp2vm11Environment9main_argsE")) + 0x68);
 	__android_log_print(ANDROID_LOG_INFO, TAG, "g_pMetadata %x", (unsigned int)g_pMetadata);
 
 	// Il2CppArray<Il2CppAssembly> il2cpp::icalls::mscorlib::System::AppDomain::GetAssemblies()
@@ -209,7 +209,7 @@ int CheckArr(Il2CppClass** pArr, uint32_t uiSize, Il2CppClass* pVal)
 	return 0;
 }
 
-#define WAIT_TIME 600000
+#define WAIT_TIME 800000
 
 Il2CppClass* GetClassFromIndex(uint32_t uiIndex)
 {
@@ -222,7 +222,9 @@ Il2CppClass* GetClassFromIndex(uint32_t uiIndex)
 		return 0;
 
 	usleep(WAIT_TIME);
-	return g_GetClassFromIndex(uiIndex);
+	Il2CppClass* pClass = g_GetClassFromIndex(uiIndex);
+	g_SetupClass(pClass);
+	return pClass;
 }
 
 void dump_class(Il2CppClass* type)
@@ -236,7 +238,6 @@ void dump_class(Il2CppClass* type)
 	Il2CppClass* arr[60];
 	memset(arr, 0, sizeof(arr));
 	uint32_t uiIndex = 0;
-	g_SetupClass(type);
 	if (type->fields)
 	{
 		__android_log_print(ANDROID_LOG_INFO, TAG, "\t// Fields");
@@ -250,7 +251,7 @@ void dump_class(Il2CppClass* type)
 				{
 					__android_log_print(ANDROID_LOG_INFO, TAG, "\t%s %s;", klass->name, type->fields[z].name);
 
-					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+					if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syste")
 						&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
 						&& !CheckDumped(type))
 						arr[uiIndex++] = klass;
@@ -283,7 +284,7 @@ void dump_class(Il2CppClass* type)
 						{
 							__android_log_print(ANDROID_LOG_INFO, TAG, "\tstatic %s %s = %d;", klass->name, type->fields[z].name, dat.i);
 
-							if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+							if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syste")
 								&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
 								&& !CheckDumped(type))
 								arr[uiIndex++] = klass;
@@ -365,7 +366,7 @@ void dump_class(Il2CppClass* type)
 						if (klass)
 						{
 							szTypeName = klass->name;
-							if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+							if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syste")
 								&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
 								&& !CheckDumped(type))
 								arr[uiIndex++] = klass;
@@ -386,7 +387,7 @@ void dump_class(Il2CppClass* type)
 					{
 						__android_log_print(ANDROID_LOG_INFO, TAG, "\t%s %s(%s); // %x", klass->name, pMethod->name, tempBuff, pMethod->method);
 
-						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syste")
 							&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
 							&& !CheckDumped(type))
 							arr[uiIndex++] = klass;
@@ -425,7 +426,7 @@ void dump_class(Il2CppClass* type)
 						if (klass)
 						{
 							szTypeName = klass->name;
-							if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+							if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syste")
 								&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
 								&& !CheckDumped(type))
 								arr[uiIndex++] = klass;
@@ -447,7 +448,7 @@ void dump_class(Il2CppClass* type)
 					{
 						__android_log_print(ANDROID_LOG_INFO, TAG, "\tvirtual %s %s(%s); // %d - %x", klass->name, pMethod->name, tempBuff, z, pMethod->method);
 
-						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syst")
+						if (!CheckArr(arr, uiIndex, klass) && !strstr(klass->namespaze, "Syste")
 							&& !strstr(klass->namespaze, "UnityEngi") && !strstr(klass->namespaze, "Googl")
 							&& !CheckDumped(type))
 							arr[uiIndex++] = klass;
@@ -521,7 +522,7 @@ void* main_thread(void * arg)
 	// 14 - UnityEngine.UI
 	// 15 - Assembly-CSharp-firstpass
 	// 16 - Assembly-CSharp
-	for (int i = 15; i < pArray->max_length; ++i)
+	for (int i = 16; i < pArray->max_length; ++i)
 	{
 		memset(pDumpedClasses, 0, sizeof(pDumpedClasses));
 		uiDumpedIndex = 0;
@@ -547,12 +548,12 @@ void* main_thread(void * arg)
 		__android_log_print(ANDROID_LOG_INFO, TAG, "/****************** Beginning class dump ****************************/");
 		for (int x = 0; x < pImage->uiTypeCount; ++x)
 		{
-			Il2CppClass* type = g_GetClassFromIndex(x + pImage->uiTypeStart);
+			Il2CppClass* type = GetClassFromIndex(x + pImage->uiTypeStart);
 			//vid = g_GetVirt(14, type);
 			//if (strstr(type->namespaze, "Rpc"))
-			//	continue;
-			dump_class(type);
-			usleep(WAIT_TIME);
+			{
+				dump_class(type);
+			}
 		}
 		__android_log_print(ANDROID_LOG_INFO, TAG, "/****************** Dumped %04d classes *****************************/", uiDumpedIndex);
 
